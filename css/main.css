@@ -1,0 +1,216 @@
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    letter-spacing: .08em;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    height: 100%;
+}
+body {
+    font-family: 'Roboto';
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+h1, h2 { font-weight: 100; }
+h1 {
+    font-size: 1.3em;
+    padding: 0;
+    margin: 0;
+}
+h2 {
+    font-size: 1.2em;
+    margin: 0;
+}
+ul {
+    text-align: center;
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
+ul li { padding: 1em .5em 1em .5em; }
+ul li a {
+    transition: color .1s linear, font-size .1s linear;
+    text-decoration: none;
+    color: black;
+}
+header[role="banner"] {
+    border-bottom: 0.0625em solid #e7e9eb;
+    background-color: white;
+    text-align: center;
+    line-height: 4em;
+    font-size: 80%;
+    width: 100%;
+}
+header[role="banner"] a {
+    color: rgb(0, 82, 156);
+    text-decoration: none;
+}
+.mini-banner {
+    display: block;
+    font-size: 90%;
+}
+
+
+.exp, .contact-info {
+    padding-top: 5%;
+    font-weight: 300;
+}
+.exp h1 {
+    font-size: 1.5em;
+}
+.exp ul li, .contact-info ul li {
+    padding: .4em;
+}
+.contact-info ul li a {
+    transition: color .1s linear, font-size .1s linear;
+    text-decoration: none;
+    color: white;
+}
+.contact-info ul li a:hover { color: rgb(52, 73, 94); }
+
+#project {
+    font-weight: 400;
+}
+#project h1 {
+    font-family: 'Roboto Condensed';
+    font-weight: 300;
+    font-size: 1.8em;
+    color: #03a9f4;
+}
+
+.exp .mini-banner, #project .mini-banner {
+    display: inline;
+    font-weight: 100;
+    font-style: italic;
+    font-size: 80%;
+}
+
+header[role="banner"] .mini-banner {
+    font-size: 70%;
+}
+#side-content {
+    padding-right: 1em;
+    text-align: center;
+    margin: 0 auto;
+    display: none;
+    height: 100%;
+    float: left;
+    width: 40%;
+}
+.aside-backdrop {
+    background: rgba(0, 0, 0, .5);
+}
+.circular {
+    background: white url('/img/me.png') no-repeat center center;
+    background-size: cover;
+    border-radius: 100%;
+    margin: .5em auto;
+ //   display: none;
+    height: 8em;
+    width: 8em;
+}
+#content {
+    height: 100%;
+    width: 100%;
+}
+#contact ul li a:hover {
+    color: rgb(52, 152, 219);
+    font-size: 120%;
+}
+#experience {
+    font-family: 'Open Sans';
+    /* This needs to change to match the side content */
+    text-align: center;
+    width: 100%;
+}
+#experience h1 { margin: .3em 0 .3em 0; }
+#experience p {
+    letter-spacing: .05em;
+}
+#job { border-bottom: 1px solid #eee; }
+#project {
+    padding-top: 5%;
+    display: block;
+    width: 100%;
+}
+#project h1 { text-align: center; }
+#project ul li {
+    transition: background .25s linear;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+}
+.link, .description, .source { font-size: 80%; }
+.source { display: none; }
+#project ul li:hover { background: #bdc3c7; }
+#project ul li a:hover { color: rgb(52, 152, 219); }
+
+.view-animate.ng-enter, .view-animate.ng-leave {
+}
+
+.view-animate.ng-enter {
+}
+.view-animate.ng-leave {
+}
+.view-animate.ng-enter, 
+.view-animate.ng-leave.ng-leave-active {
+}
+.view-animate.ng-leave,
+.view-animate.ng-enter.ng-enter-active {
+}
+
+
+
+@media all and (min-width: 400px) {
+    header[role="banner"] .mini-banner { display: inline; }
+    #project .mini-banner { text-align: right; display: inline; }
+    #contact ul li { display: inline-block; }
+}
+@media all and (min-width: 600px) {
+    header[role="banner"], #contact { display: none; }
+    #side-content { 
+        background-color: #3498db;
+        font-weight: 100;
+        display: block; 
+        color: white;
+        height: 100%;
+
+    }
+    #side-content dt {
+        font-family: 'Open Sans';
+        margin: .5em 0 .5em 0;
+    }
+    #side-content dd {
+        letter-spacing: .1em;
+        margin-bottom: .2em;
+        text-align: center;
+        font-size: 80%;
+    }
+    #side-content p {
+        letter-spacing: .05em;
+        margin-left: 5%;
+    }
+    #content {
+        padding-left: 1em;
+        margin-left: 40%;
+        width: 60%;
+    }
+    #experience { display: none; }
+    .source { display: block; }
+}
+@media all and (min-width: 1100px) {
+    #project ul {
+        text-align: center;
+        margin-left: 5%;
+        width: 90%;
+    }
+    .description {
+        margin-left: 5%;
+        width: 45%;
+    }
+    .source {
+        width: 25%;
+    }
+}

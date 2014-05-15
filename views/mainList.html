@@ -1,0 +1,8 @@
+<h1>Projects</h1>
+<ul>
+    <li ng-repeat="project in config.projects">
+        <a href="#/projects/{{project.name}}">{{project.name}} 
+            <span class="mini-banner">{{project.languages}} ({{project.date}})</span>
+        </a>
+    </li>
+</ul>
