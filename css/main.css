@@ -14,7 +14,6 @@ body {
     height: 100%;
     width: 100%;
 }
-h1, h2 { font-weight: 100; }
 h1 {
     font-size: 1.3em;
     padding: 0;
@@ -52,8 +51,6 @@ header[role="banner"] a {
     display: block;
     font-size: 90%;
 }
-
-
 .exp, .contact-info {
     padding-top: 5%;
     font-weight: 300;
@@ -100,15 +97,14 @@ header[role="banner"] .mini-banner {
     float: left;
     width: 40%;
 }
-.aside-backdrop {
-    background: rgba(0, 0, 0, .5);
+#side-content h1, #side-content h2 {
+    font-weight: 100;
 }
 .circular {
     background: white url('/img/me.png') no-repeat center center;
     background-size: cover;
     border-radius: 100%;
     margin: .5em auto;
- //   display: none;
     height: 8em;
     width: 8em;
 }
@@ -142,30 +138,10 @@ header[role="banner"] .mini-banner {
     border-bottom: 1px solid #eee;
     width: 100%;
 }
-.link, .description, .source { font-size: 80%; }
-.source { display: none; }
 #project ul li:hover { background: #bdc3c7; }
 #project ul li a:hover { color: rgb(52, 152, 219); }
-
-.view-animate.ng-enter, .view-animate.ng-leave {
-}
-
-.view-animate.ng-enter {
-}
-.view-animate.ng-leave {
-}
-.view-animate.ng-enter, 
-.view-animate.ng-leave.ng-leave-active {
-}
-.view-animate.ng-leave,
-.view-animate.ng-enter.ng-enter-active {
-}
-
-
-
 @media all and (min-width: 400px) {
     header[role="banner"] .mini-banner { display: inline; }
-    #project .mini-banner { text-align: right; display: inline; }
     #contact ul li { display: inline-block; }
 }
 @media all and (min-width: 600px) {
@@ -178,39 +154,10 @@ header[role="banner"] .mini-banner {
         height: 100%;
 
     }
-    #side-content dt {
-        font-family: 'Open Sans';
-        margin: .5em 0 .5em 0;
-    }
-    #side-content dd {
-        letter-spacing: .1em;
-        margin-bottom: .2em;
-        text-align: center;
-        font-size: 80%;
-    }
-    #side-content p {
-        letter-spacing: .05em;
-        margin-left: 5%;
-    }
     #content {
         padding-left: 1em;
         margin-left: 40%;
         width: 60%;
     }
     #experience { display: none; }
-    .source { display: block; }
-}
-@media all and (min-width: 1100px) {
-    #project ul {
-        text-align: center;
-        margin-left: 5%;
-        width: 90%;
-    }
-    .description {
-        margin-left: 5%;
-        width: 45%;
-    }
-    .source {
-        width: 25%;
-    }
 }

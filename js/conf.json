@@ -39,6 +39,21 @@
         },
         {
             "links": { 
+                "Github":"http://github.com/sangm/bashContactDB"
+            },
+            "name": "Bash Contact Database",
+            "languages": [
+                "Bash Shell"
+            ],
+            "date": "2013",
+            "description": [
+                "Implemented index.html generator by using AngularJS to ease",
+                "the transition of newly hired employees for the Computer",
+                "Science Department at Texas State University"
+            ]
+        },
+        {
+            "links": { 
                 "Demo":"http://web.sangm.net"
             },
             "name": "Static Website Generator",
@@ -87,6 +102,11 @@
         }
     ],
     "jobs": [
+        {
+            "company": "Texas State University",
+            "title": "Research Assistant",
+            "date": "August 2013 - Present"
+        },
         {
             "company": "USAA",
             "title": "iOS Software Engineer Intern",
