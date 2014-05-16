@@ -6,6 +6,7 @@ app.service('ConfigService', function($http) {
         config.github = result.data.github;
         config.linkedin = result.data.linkedin;
         config.projects = result.data.projects;
+        config.resume = result.data.resume;
         angular.forEach(config.projects, function(project) {
             if (project.description)
                 project.description = project.description.join(' ');

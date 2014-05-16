@@ -103,11 +103,6 @@
     ],
     "jobs": [
         {
-            "company": "Texas State University",
-            "title": "Research Assistant",
-            "date": "August 2013 - Present"
-        },
-        {
             "company": "USAA",
             "title": "iOS Software Engineer Intern",
             "date": "Summer 2014"
@@ -125,5 +120,6 @@
     ],
     "github": "http://github.com/sangm",
     "email": "sang.mercado@gmail.com",
-    "linkedin": "http://linkedin.com/in/sangmercado"
+    "linkedin": "http://linkedin.com/in/sangmercado",
+    "resume":"https://drive.google.com/file/d/0B_nqUzCaR44OS2M2bUppZWtabU0/edit?usp=sharing"
 }
