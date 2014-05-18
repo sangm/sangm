@@ -2,7 +2,8 @@
     "projects" : [
         {
             "links": { 
-                "Demo":"http://sangm.net"
+                "Demo":"http://sangm.net",
+                "Github":"http://github.com/sangm/sangm.net"
             },
             "name": "sangm.net",
             "languages": [
