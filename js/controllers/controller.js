@@ -1,9 +1,12 @@
 app.controller('SideCtrl', function($scope, ConfigService) {
-    $scope.config = ConfigService.config;
+    ConfigService.getConfig().then(function(result) {
+        $scope.config = result;
+    });
 });
 app.controller('MainCtrl', function($scope, $location, ConfigService) {
-    $scope.config = ConfigService.config;
-    console.log($location.path());
+    ConfigService.getConfig().then(function(result) {
+        $scope.config = result;
+    });
 });
 app.controller('ProjectCtrl', function($scope, $routeParams, ConfigService) {
     $scope.project = NaN;
