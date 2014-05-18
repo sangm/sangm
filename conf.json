@@ -1,3 +1,8 @@
+/* The reason why description is broken down into a list is
+ * I do not want the lines to go over 80 characters and from what I 
+ * looked into, json does not let you separate lines by '\' or by 
+ * any other means.
+ **/
 {
     "projects" : [
         {
@@ -12,7 +17,10 @@
             ],
             "date": "2014",
             "description": [ 
-                "(This site) seems kind of recursive"
+                "Dynamically generate site contents through a json file",
+                "and create a single page application.",
+                "This way, maintenance of the website is lower than manually",
+                "editing the html file"
             ]
         },
         {
