@@ -27,7 +27,7 @@
 
 app.service('ConfigService', function($http) {
     this.getConfig = function() {
-        return $http.get('js/conf.json').then(function(result) {
+        return $http.get('conf.json').then(function(result) {
             angular.forEach(result.data.projects, function(project) {
                 if (project.description)
                     project.description = project.description.join(' ');
