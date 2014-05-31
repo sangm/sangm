@@ -141,6 +141,8 @@ header[role="banner"] .mini-banner {
 #project ul li:hover { background: #bdc3c7; }
 #project ul li a:hover { color: rgb(52, 152, 219); }
 
+.rc { font-family: 'Roboto Condensed'; }
+
 .view-animate.ng-enter {
     transition: 0.75s;
     opacity: 0;

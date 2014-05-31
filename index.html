@@ -16,13 +16,14 @@
         </header>
         <div id="side-content" ng-controller="SideCtrl">
             <div class="circular"></div>     
-            <h1>Sang Mercado</h1>
-            <h2 class="mini-banner">Aspiring Software Engineer</span></h2>
+            <h1>{{config.name}}</h1>
+            <h2 class="mini-banner">{{config.subtitle}}</span></h2>
             <div class="exp">
                 <h1>Experience</h1>
                 <ul>
                     <li ng-repeat="job in config.jobs">
-                        {{job.company}} <span class="mini-banner">{{job.title}} ({{job.date}})</span>
+                    <span class="rc">{{job.company}}</span> 
+                    <span class="mini-banner">{{job.title}} ({{job.date}})</span>
                     </li>
                 </ul>
             </div> 
@@ -53,12 +54,6 @@
                 </div>
             </div>
             <div id="project" ng-view="" ng-class="{'view-animate': path !== '/'}"></div>
-<!--            <div id="project">
-                <h1>Projects</h1>
-                <ul>
-                    <li>Project 1</li> 
-                </ul>
-            </div>-->
         </div>
         <footer>
         </footer>
