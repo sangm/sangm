@@ -2,16 +2,23 @@
     "projects" : [
         {
             "links": { 
-                "Link":"http://blog.sangm.net"
+                "Github":"https://github.com/sangm/Test-Driven-Development.git"
             },
-            "name": "blog.sangm.net",
+            "name": "Test Driven Development",
             "languages": [
-                "Markdown",
-                "Ghost"
+                "Python",
+                "C++",
+                "Regex",
+                "Java"
             ],
             "date": "2014",
             "description": [ 
-                "Personal blog regarding my experience as software engineer"
+                "To me, TDD is an important Software Enginerring practice that",
+                "is hardly practiced. This project is a way for me to",
+                "maintain my Data Structures/Algorithms as well as get a",
+                "better understanding of what Test Driven Development is about",
+                "by implementing Data Structures, Algorithms, and Code Katas",
+                "TDD style"
             ]
         },
         {
