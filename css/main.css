@@ -28,24 +28,13 @@ ul {
     list-style: none;
     width: 100%;
     padding: 0;
+    margin: 0;
 }
 ul li { padding: 1em .5em 1em .5em; }
 ul li a {
     transition: color .1s linear, font-size .1s linear;
     text-decoration: none;
     color: black;
-}
-header[role="banner"] {
-    border-bottom: 0.0625em solid #e7e9eb;
-    background-color: white;
-    text-align: center;
-    line-height: 4em;
-    font-size: 80%;
-    width: 100%;
-}
-header[role="banner"] a {
-    color: rgb(0, 82, 156);
-    text-decoration: none;
 }
 .mini-banner {
     display: block;
@@ -85,28 +74,27 @@ header[role="banner"] a {
     font-size: 80%;
 }
 
-header[role="banner"] .mini-banner {
-    font-size: 70%;
-}
 #side-content {
-    padding-right: 1em;
+    background-color: #3498db;
     text-align: center;
-    margin: 0 auto;
-    display: none;
+    font-weight: 100;
+    color: white;
     height: 100%;
-    float: left;
-    width: 40%;
 }
 #side-content h1, #side-content h2 {
     font-weight: 100;
+}
+header[role="banner"] {
+    padding-top: 2.5%;
+    padding-bottom: 5%;
 }
 .circular {
     background: white url('/img/me.png') no-repeat center center;
     background-size: cover;
     border-radius: 100%;
-    margin: .5em auto;
-    height: 8em;
-    width: 8em;
+    margin: 0 auto;   
+    height: 10em;
+    width: 10em;
 }
 #content {
     height: 100%;
@@ -116,17 +104,6 @@ header[role="banner"] .mini-banner {
     color: rgb(52, 152, 219);
     font-size: 120%;
 }
-#experience {
-    font-family: 'Open Sans';
-    /* This needs to change to match the side content */
-    text-align: center;
-    width: 100%;
-}
-#experience h1 { margin: .3em 0 .3em 0; }
-#experience p {
-    letter-spacing: .05em;
-}
-#job { border-bottom: 1px solid #eee; }
 #project {
     padding-top: 5%;
     display: block;
@@ -151,24 +128,23 @@ header[role="banner"] .mini-banner {
     opacity: 1;
 }
 
-@media all and (min-width: 400px) {
-    header[role="banner"] .mini-banner { display: inline; }
-    #contact ul li { display: inline-block; }
-}
 @media all and (min-width: 600px) {
-    header[role="banner"], #contact { display: none; }
     #side-content { 
-        background-color: #3498db;
-        font-weight: 100;
+        padding-right: 1em;
+        margin: 0 auto;
         display: block; 
-        color: white;
-        height: 100%;
-
+        float: left;
+        width: 40%;
     }
+    .circular { 
+        margin: .5em auto;
+        height: 8em;
+        width: 8em;
+    }
+    .exp, .contact-info { background-color: #3498db; }
     #content {
         padding-left: 1em;
         margin-left: 40%;
         width: 60%;
     }
-    #experience { display: none; }
 }
