@@ -79,7 +79,7 @@ ul li a {
     text-align: center;
     font-weight: 100;
     color: white;
-    height: 100%;
+    min-height: 100%;
 }
 #side-content h1, #side-content h2 {
     font-weight: 100;
@@ -113,6 +113,8 @@ header[role="banner"] {
 #project ul li {
     transition: background .25s linear;
     border-bottom: 1px solid #eee;
+    margin-left: 3%;
+    margin-right: 5%;
     width: 90%;
 }
 #project ul li:hover { background: #bdc3c7; }
@@ -140,6 +142,10 @@ header[role="banner"] {
         margin: .5em auto;
         height: 8em;
         width: 8em;
+    }
+    #project ul li {
+        margin: 0;
+        width: 100%;
     }
     .exp, .contact-info { background-color: #3498db; }
     #content {
