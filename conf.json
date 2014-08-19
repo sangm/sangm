@@ -141,14 +141,19 @@
     ],
     "jobs": [
         {
-            "company": "USAA",
-            "title": "Software Engineering Intern",
-            "date": "Summer 2014"
+            "company": "Texas State University",
+            "title": "Research Assistant",
+            "date": "August 2014 - Present"
         },
         {
             "company": "Texas State University",
             "title": "Undergraduate Instructional Assistant",
             "date": "September 2013 - Present"
+        },
+        {
+            "company": "USAA",
+            "title": "Software Engineering Intern",
+            "date": "Summer 2014"
         },
         {
             "company": "Polycom",
