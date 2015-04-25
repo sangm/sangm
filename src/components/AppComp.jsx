@@ -55,9 +55,8 @@ export default React.createClass({
                                     firstColor={styles.first}
                                     lastColor={styles.last} />
                             <div className="navbar-fixed-bottom">
-                                <Social github="https://github.com/sangm"
-                                        linkedin="http://linkedin.com/in/sangmercado"
-                                        inbox="sang.mercado@gmail.com" />
+                                <Social links={[{network: 'github', src: "https://github.com/sangm"}, {network: 'linkedin', src:"https://linkedin.com/in/sangmercado"}]}
+                                        email={{network: 'inbox', src:'sang.mercado@gmail.com'}}/>
                             </div>
                             
                         </Row>

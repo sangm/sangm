@@ -46113,9 +46113,8 @@ exports['default'] = _React2['default'].createClass({
                         _React2['default'].createElement(
                             'div',
                             { className: 'navbar-fixed-bottom' },
-                            _React2['default'].createElement(_Social2['default'], { github: 'https://github.com/sangm',
-                                linkedin: 'http://linkedin.com/in/sangmercado',
-                                inbox: 'sang.mercado@gmail.com' })
+                            _React2['default'].createElement(_Social2['default'], { links: [{ network: 'github', src: 'https://github.com/sangm' }, { network: 'linkedin', src: 'https://linkedin.com/in/sangmercado' }],
+                                email: { network: 'inbox', src: 'sang.mercado@gmail.com' } })
                         )
                     )
                 ),
@@ -46336,7 +46335,7 @@ var _React = require('react');
 
 var _React2 = _interopRequireWildcard(_React);
 
-var _FloatingActionButton = require('material-ui');
+var _FloatingActionButton$Snackbar = require('material-ui');
 
 /*
 <li>
@@ -46355,6 +46354,7 @@ var styles = {
         margin: '1em'
     }
 };
+
 exports['default'] = _React2['default'].createClass({
     displayName: 'SocialComp',
 
@@ -46365,15 +46365,14 @@ exports['default'] = _React2['default'].createClass({
     getIcons: function getIcons() {
         var _this = this;
 
-        return Object.keys(this.props).map(function (key) {
+        return this.props.links.map(function (link) {
             return _React2['default'].createElement(
                 'li',
                 null,
                 _React2['default'].createElement(
                     'a',
-                    { href: _this.props[key] },
-                    _React2['default'].createElement(_FloatingActionButton.FloatingActionButton, { className: 'no-box-shadow',
-                        iconClassName: _this.getIcon(key),
+                    { href: link.src },
+                    _React2['default'].createElement(_FloatingActionButton$Snackbar.FloatingActionButton, { iconClassName: _this.getIcon(link.network),
                         mini: true,
                         secondary: true })
                 )
@@ -46381,12 +46380,36 @@ exports['default'] = _React2['default'].createClass({
         });
     },
 
+    handleSnackbar: function handleSnackbar() {
+        //We can add more code to this function, but for now we'll just include an alert.
+        var email = this.props.email.src;
+        window.location.href = 'mailto:' + email + '?subject=Contact%20from%20sangm.io';
+        this.refs.snackbar.dismiss();
+    },
+
+    handleClick: function handleClick() {
+        this.refs.snackbar.show();
+    },
+
     render: function render() {
         return _React2['default'].createElement(
             'ul',
             { className: 'list-unstyled list-inline',
                 style: styles.ul },
-            this.getIcons()
+            this.getIcons(),
+            _React2['default'].createElement(
+                'li',
+                null,
+                _React2['default'].createElement(_FloatingActionButton$Snackbar.FloatingActionButton, { iconClassName: this.getIcon(this.props.email.network),
+                    onTouchTap: this.handleClick,
+                    mini: true,
+                    secondary: true })
+            ),
+            _React2['default'].createElement(_FloatingActionButton$Snackbar.Snackbar, {
+                message: 'My email is ' + this.props.email.src + ' :)',
+                ref: 'snackbar',
+                action: 'Launch Email Client',
+                onActionTouchTap: this.handleSnackbar })
         );
     }
 });
