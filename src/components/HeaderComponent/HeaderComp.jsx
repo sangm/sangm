@@ -1,6 +1,8 @@
 import React from 'react'
 import _ from 'lodash'
 
+require('./Header.less')
+
 let styles = {
     head: {
         margin: '0',

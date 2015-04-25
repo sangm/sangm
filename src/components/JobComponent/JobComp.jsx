@@ -52,7 +52,7 @@ export default React.createClass({
                     <ModalTrigger modal={<MyModal {...this.props} />}>
                         <span style={h2}
                               className="small"> 
-                            Full Details
+                           Previous Employers 
                         </span>
                     </ModalTrigger>
                 </h1>

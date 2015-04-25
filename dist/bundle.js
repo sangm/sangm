@@ -7,7 +7,7 @@ var _React = require('react');
 
 var _React2 = _interopRequireWildcard(_React);
 
-var _App = require('./components/AppComp.jsx');
+var _App = require('./components/AppComponent/AppComp.jsx');
 
 var _App2 = _interopRequireWildcard(_App);
 
@@ -20,7 +20,7 @@ _injectTapEventPlugin2['default']();
 _React2['default'].render(_React2['default'].createElement(_App2['default'], null), document.body);
 
 
-},{"./components/AppComp.jsx":310,"react":309,"react-tap-event-plugin":136}],2:[function(require,module,exports){
+},{"./components/AppComponent/AppComp.jsx":311,"react":309,"react-tap-event-plugin":136}],2:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -46027,6 +46027,8 @@ module.exports = warning;
 module.exports = require('./lib/React');
 
 },{"./lib/React":167}],310:[function(require,module,exports){
+(function() { var head = document.getElementsByTagName('head')[0]; var style = document.createElement('style'); style.type = 'text/css';var css = ".SysMargin{margin:3em}.SysPadding{padding:0}.SysHeight{height:100%}.site-container{font-family:'Roboto','sans-serif';height:100%;cursor:default}.left-div{display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:flex-end;justify-content:flex-end;padding:0;height:100%}.right-div{display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:flex-start;justify-content:flex-start;padding:0;height:100%;background:#2c3e50}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
+},{}],311:[function(require,module,exports){
 'use strict';
 
 var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
@@ -46039,19 +46041,19 @@ var _React = require('react');
 
 var _React2 = _interopRequireWildcard(_React);
 
-var _Header = require('./HeaderComp.jsx');
+var _Header = require('../HeaderComponent/HeaderComp.jsx');
 
 var _Header2 = _interopRequireWildcard(_Header);
 
-var _Social = require('./SocialComp.jsx');
+var _Social = require('../SocialComponent/SocialComp.jsx');
 
 var _Social2 = _interopRequireWildcard(_Social);
 
-var _Jobs = require('./JobComp.jsx');
+var _Jobs = require('../JobComponent/JobComp.jsx');
 
 var _Jobs2 = _interopRequireWildcard(_Jobs);
 
-var _Projects = require('./ProjectComp.jsx');
+var _Projects = require('../ProjectComponent/ProjectComp.jsx');
 
 var _Projects2 = _interopRequireWildcard(_Projects);
 
@@ -46061,40 +46063,32 @@ var _import = require('lodash');
 
 var _import2 = _interopRequireWildcard(_import);
 
+require('./App.less');
+
+
+
 var jobs = [{ image: 'assets/img/in-logo.gif', desc: 'Software Engineering Intern', date: 'Summer 2015', style: { width: 150 } }, { image: 'assets/img/texas-state-logo.gif', desc: 'Research Assistant', date: 'August 2014 - Present', style: { width: 100 } }, { image: 'assets/img/usaa-logo.gif', desc: 'Software Engineering Intern', date: 'Summer 2014', style: { width: 100 } }, { image: 'assets/img/texas-state-logo.gif', desc: 'Instructional Assistant', date: 'September 2013 - Summer 2014', style: { width: 100 } }, { image: 'assets/img/polycom-logo.gif', desc: 'Localization Software Intern', date: 'Summer 2013', style: { width: 130 } }];
 
 var styles = {
-    siteContainer: { fontFamily: '\'Roboto\', \'sans-serif\'' },
-    margin: { margin: '3em' },
-    height: { height: '100%' },
-    padding: { padding: '0' },
-    first: { color: '#3498DB' },
-    last: { color: 'black' },
-    white: { color: 'white' },
-    navy: { background: '#2C3E50' },
-    gray: { color: '#777' },
-    center: {
-        display: 'flex',
-        alignItems: 'center'
-    }
+    lightBlue: "#3498db",
+    navy: "#2c3e50",
+    red: "#e74c3c",
+    white: "#ecf0f1",
+    blue: "#2980b9",
+    gray: "#777777",
+    black: "#000000"
 };
 
-/*
-<Row style={styles.margin}>
-    <Projects projects={['project',2,3]} />
-</Row>
-*/
 exports['default'] = _React2['default'].createClass({
     displayName: 'AppComp',
 
+    colorObject: function colorObject(color) {
+        return { color: color };
+    },
     render: function render() {
-        var baseStyle = _import2['default'].assign({}, styles.padding, styles.height);
-        var leftStyle = _import2['default'].assign({}, baseStyle);
-        var rightStyle = _import2['default'].assign({}, baseStyle, styles.center, styles.navy);
         return _React2['default'].createElement(
             _Grid$Row$Col.Grid,
-            { className: 'site-container',
-                style: styles.siteContainer },
+            { className: 'site-container' },
             _React2['default'].createElement(
                 _Grid$Row$Col.Row,
                 null,
@@ -46102,14 +46096,21 @@ exports['default'] = _React2['default'].createClass({
                     _Grid$Row$Col.Col,
                     { xs: 12,
                         md: 6,
-                        style: leftStyle },
+                        className: 'left-div' },
                     _React2['default'].createElement(
                         _Grid$Row$Col.Row,
-                        { style: styles.margin },
-                        _React2['default'].createElement(_Header2['default'], { first: 'Sang',
-                            last: 'Mercado',
-                            firstColor: styles.first,
-                            lastColor: styles.last }),
+                        { className: 'SysMargin' },
+                        _React2['default'].createElement(
+                            'div',
+                            { className: 'navbar-fixed-top SysMargin' },
+                            _React2['default'].createElement(_Header2['default'], { first: 'Sang',
+                                last: 'Mercado',
+                                firstColor: this.colorObject(styles.lightBlue),
+                                lastColor: this.colorObject(styles.black) })
+                        ),
+                        _React2['default'].createElement(_Projects2['default'], { projects: ['project', 2, 3],
+                            mainHeader: this.colorObject(styles.blue),
+                            secondHeader: this.colorObject(styles.gray) }),
                         _React2['default'].createElement(
                             'div',
                             { className: 'navbar-fixed-bottom' },
@@ -46122,12 +46123,12 @@ exports['default'] = _React2['default'].createClass({
                     _Grid$Row$Col.Col,
                     { xs: 12,
                         md: 6,
-                        style: rightStyle },
+                        className: 'right-div' },
                     _React2['default'].createElement(
                         _Grid$Row$Col.Row,
-                        { style: styles.margin },
-                        _React2['default'].createElement(_Jobs2['default'], { mainHeader: styles.white,
-                            secondHeader: styles.gray,
+                        { className: 'SysMargin' },
+                        _React2['default'].createElement(_Jobs2['default'], { mainHeader: this.colorObject(styles.white),
+                            secondHeader: this.colorObject(styles.gray),
                             jobs: jobs })
                     )
                 )
@@ -46138,7 +46139,9 @@ exports['default'] = _React2['default'].createClass({
 module.exports = exports['default'];
 
 
-},{"./HeaderComp.jsx":311,"./JobComp.jsx":312,"./ProjectComp.jsx":313,"./SocialComp.jsx":314,"lodash":3,"react":309,"react-bootstrap":123}],311:[function(require,module,exports){
+},{"../HeaderComponent/HeaderComp.jsx":313,"../JobComponent/JobComp.jsx":314,"../ProjectComponent/ProjectComp.jsx":315,"../SocialComponent/SocialComp.jsx":316,"./App.less":310,"lodash":3,"react":309,"react-bootstrap":123}],312:[function(require,module,exports){
+(function() { var head = document.getElementsByTagName('head')[0]; var style = document.createElement('style'); style.type = 'text/css';var css = ".testClass{color:purple}.shape{display:inline-block;width:200px;height:200px;background:#ddf;margin:20px}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
+},{}],313:[function(require,module,exports){
 'use strict';
 
 var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
@@ -46154,6 +46157,8 @@ var _React2 = _interopRequireWildcard(_React);
 var _import = require('lodash');
 
 var _import2 = _interopRequireWildcard(_import);
+
+require('./Header.less');
 
 var styles = {
     head: {
@@ -46187,7 +46192,7 @@ exports['default'] = _React2['default'].createClass({
 module.exports = exports['default'];
 
 
-},{"lodash":3,"react":309}],312:[function(require,module,exports){
+},{"./Header.less":312,"lodash":3,"react":309}],314:[function(require,module,exports){
 'use strict';
 
 var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
@@ -46285,7 +46290,7 @@ exports['default'] = _React2['default'].createClass({
                         'span',
                         { style: h2,
                             className: 'small' },
-                        'Full Details'
+                        'Previous Employers'
                     )
                 )
             )
@@ -46295,7 +46300,7 @@ exports['default'] = _React2['default'].createClass({
 module.exports = exports['default'];
 
 
-},{"lodash":3,"material-ui":4,"react":309,"react-bootstrap":123}],313:[function(require,module,exports){
+},{"lodash":3,"material-ui":4,"react":309,"react-bootstrap":123}],315:[function(require,module,exports){
 'use strict';
 
 var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
@@ -46308,10 +46313,36 @@ var _React = require('react');
 
 var _React2 = _interopRequireWildcard(_React);
 
+var _import = require('lodash');
+
+var _import2 = _interopRequireWildcard(_import);
+
+var styles = {
+    head: {
+        h1: { fontSize: '1.4em', margin: '0', padding: '0' },
+        h2: { fontSize: '80%', margin: '0', paddingLeft: '1em', cursor: 'pointer' }
+    } };
+
 exports['default'] = _React2['default'].createClass({
     displayName: 'ProjectComp',
 
     render: function render() {
+        var h1 = _import2['default'].assign({}, styles.head.h1, this.props.mainHeader);
+        var h2 = _import2['default'].assign({}, styles.head.h2, this.props.secondHeader);
+        return _React2['default'].createElement(
+            'div',
+            null,
+            _React2['default'].createElement(
+                'h1',
+                { style: h1 },
+                'Project Demonstration',
+                _React2['default'].createElement(
+                    'span',
+                    { style: h2 },
+                    'List of Projects'
+                )
+            )
+        );
         return _React2['default'].createElement(
             'div',
             null,
@@ -46322,7 +46353,7 @@ exports['default'] = _React2['default'].createClass({
 module.exports = exports['default'];
 
 
-},{"react":309}],314:[function(require,module,exports){
+},{"lodash":3,"react":309}],316:[function(require,module,exports){
 'use strict';
 
 var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };

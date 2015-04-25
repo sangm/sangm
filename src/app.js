@@ -1,5 +1,5 @@
 import React from 'react'
-import App from './components/AppComp.jsx'
+import App from './components/AppComponent/AppComp.jsx'
 
 import injectTapEventPlugin from "react-tap-event-plugin";
 injectTapEventPlugin();

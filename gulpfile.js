@@ -8,11 +8,14 @@ var source = require('vinyl-source-stream');
 var browserify = require('browserify');
 var babelify = require('babelify');
 var reactify = require('reactify');
+var lessify = require('node-lessify');
 
 gulp.task('build', function() {
     browserify('./src/app.js')
         .transform(babelify)
         .transform(reactify)
+        .transform(lessify)
+        .transform('varlessify', { file: './src/variables.less' })
         .bundle()
           .on('error', function(err) {
               gutil.log(err);
