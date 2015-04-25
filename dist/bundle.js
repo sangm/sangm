@@ -46061,7 +46061,7 @@ var _import = require('lodash');
 
 var _import2 = _interopRequireWildcard(_import);
 
-var jobs = [{ image: 'assets/img/linkedin-logo.gif', desc: 'Software Engineering Intern', date: 'Summer 2015', style: { width: 150 } }, { image: 'assets/img/texas-state-logo.gif', desc: 'Research Assistant', date: 'August 2014 - Present', style: { width: 100 } }, { image: 'assets/img/usaa-logo.gif', desc: 'Software Engineering Intern', date: 'Summer 2014', style: { width: 100 } }, { image: 'assets/img/texas-state-logo.gif', desc: 'Instructional Assistant', date: 'September 2013 - Summer 2014', style: { width: 100 } }, { image: 'assets/img/polycom-logo.gif', desc: 'Localization Software Intern', date: 'Summer 2013', style: { width: 130 } }];
+var jobs = [{ image: 'assets/img/in-logo.gif', desc: 'Software Engineering Intern', date: 'Summer 2015', style: { width: 150 } }, { image: 'assets/img/texas-state-logo.gif', desc: 'Research Assistant', date: 'August 2014 - Present', style: { width: 100 } }, { image: 'assets/img/usaa-logo.gif', desc: 'Software Engineering Intern', date: 'Summer 2014', style: { width: 100 } }, { image: 'assets/img/texas-state-logo.gif', desc: 'Instructional Assistant', date: 'September 2013 - Summer 2014', style: { width: 100 } }, { image: 'assets/img/polycom-logo.gif', desc: 'Localization Software Intern', date: 'Summer 2013', style: { width: 130 } }];
 
 var styles = {
     siteContainer: { fontFamily: '\'Roboto\', \'sans-serif\'' },
