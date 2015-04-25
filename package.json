@@ -2,8 +2,12 @@
   "name": "sangm.io",
   "version": "1.0.0",
   "description": "Personal website built on React",
+  "repository": "sangm/sangm",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build",
+    "server": "gulp server",
+    "dev": "gulp develop"
   },
   "author": "",
   "license": "ISC",
