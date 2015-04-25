@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var gutil = require('gulp-util');
 var concat = require('gulp-concat');
 var connect = require('gulp-connect');
 var streamify = require('gulp-streamify');
@@ -13,6 +14,9 @@ gulp.task('build', function() {
         .transform(babelify)
         .transform(reactify)
         .bundle()
+          .on('error', function(err) {
+              gutil.log(err);
+          })
         .pipe(source('./src/app.js'))
         .pipe(streamify(concat('bundle.js')))
         .pipe(gulp.dest('dist'))
@@ -26,12 +30,12 @@ gulp.task('server', function() {
 })
 
 gulp.task('reload', function() {
-    gulp.src('src/**/*.js')
+    gulp.src('dist/bundle.js')
         .pipe(connect.reload())
 })
 
 gulp.task('watch', function() {
-    gulp.watch('src/**/*.js', ['build', 'reload'])
+    gulp.watch('src/**/*', ['build', 'reload'])
 })
 
 gulp.task('default', ['build'])
