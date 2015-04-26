@@ -4,7 +4,7 @@
   "description": "Personal website built on React",
   "repository": "sangm/sangm",
   "scripts": {
-    "build": "gulp build",
+    "build": "gulp build && babel-node src/generate-static.js",
     "server": "gulp server",
     "dev": "gulp develop"
   },
