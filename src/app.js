@@ -5,4 +5,4 @@ import info from './information.json'
 import injectTapEventPlugin from "react-tap-event-plugin";
 injectTapEventPlugin();
 
-React.render(<App info={info} />, document.getElementById('content'))
+React.render(<App info={info} />, document.getElementById('contents'))

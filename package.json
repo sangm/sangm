@@ -4,7 +4,6 @@
   "description": "Personal website built on React",
   "repository": "sangm/sangm",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp build",
     "server": "gulp server",
     "dev": "gulp develop"
@@ -22,11 +21,11 @@
     "gulp-less": "^3.0.3",
     "gulp-minify-css": "^1.1.0",
     "gulp-streamify": "0.0.5",
+    "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.4",
     "handlebars": "^3.0.2",
     "node-lessify": "0.0.10",
     "reactify": "^1.1.0",
-    "varlessify": "^0.1.0",
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {

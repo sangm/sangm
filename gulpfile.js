@@ -13,6 +13,7 @@ var lessify = require('node-lessify');
 var less = require('gulp-less');
 var minifyCSS = require('gulp-minify-css');
 var concatCss = require('gulp-concat-css');
+var uglify = require('gulp-uglify');
 
 gulp.task('build', function() {
     browserify('./src/app.js')
@@ -26,6 +27,9 @@ gulp.task('build', function() {
           })
         .pipe(source('./src/app.js'))
         .pipe(streamify(concat('bundle.js')))
+        .pipe(streamify(uglify({
+            mangle: true,
+        })))
         .pipe(gulp.dest('dist'))
 })
 
