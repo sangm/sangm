@@ -11,16 +11,20 @@ var _App = require('./components/AppComponent/AppComp.jsx');
 
 var _App2 = _interopRequireWildcard(_App);
 
+var _info = require('./information.json');
+
+var _info2 = _interopRequireWildcard(_info);
+
 var _injectTapEventPlugin = require('react-tap-event-plugin');
 
 var _injectTapEventPlugin2 = _interopRequireWildcard(_injectTapEventPlugin);
 
 _injectTapEventPlugin2['default']();
 
-_React2['default'].render(_React2['default'].createElement(_App2['default'], null), document.body);
+_React2['default'].render(_React2['default'].createElement(_App2['default'], { info: _info2['default'] }), document.body);
 
 
-},{"./components/AppComponent/AppComp.jsx":311,"react":309,"react-tap-event-plugin":136}],2:[function(require,module,exports){
+},{"./components/AppComponent/AppComp.jsx":310,"./information.json":315,"react":309,"react-tap-event-plugin":136}],2:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -46027,8 +46031,6 @@ module.exports = warning;
 module.exports = require('./lib/React');
 
 },{"./lib/React":167}],310:[function(require,module,exports){
-(function() { var head = document.getElementsByTagName('head')[0]; var style = document.createElement('style'); style.type = 'text/css';var css = ".SysMargin{margin:3em}.SysPadding{padding:0}.SysHeight{height:100%}.site-container{font-family:'Roboto','sans-serif';height:100%;cursor:default}.left-div{display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:flex-end;justify-content:flex-end;padding:0;height:100%}.right-div{display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:flex-start;justify-content:flex-start;padding:0;height:100%;background:#2c3e50}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
-},{}],311:[function(require,module,exports){
 'use strict';
 
 var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
@@ -46063,29 +46065,27 @@ var _import = require('lodash');
 
 var _import2 = _interopRequireWildcard(_import);
 
-var _jobs$projects$email$social = require('../../information.json');
-
-require('./App.less');
-
-
-
-var styles = {
-    lightBlue: "#3498db",
-    navy: "#2c3e50",
-    red: "#e74c3c",
-    white: "#ecf0f1",
-    blue: "#2980b9",
-    gray: "#777777",
-    black: "#000000"
-};
+/* 
+ * Colors defined in variables.less 
+    @lightBlue
+    @navy
+    @red
+    @white
+    @blue
+    @gray
+    @black
+  **/
 
 exports['default'] = _React2['default'].createClass({
     displayName: 'AppComp',
 
-    colorObject: function colorObject(color) {
-        return { color: color };
-    },
     render: function render() {
+        var _props$info = this.props.info;
+        var jobs = _props$info.jobs;
+        var projects = _props$info.projects;
+        var social = _props$info.social;
+        var email = _props$info.email;
+
         return _React2['default'].createElement(
             _Grid$Row$Col.Grid,
             { className: 'site-container' },
@@ -46105,17 +46105,17 @@ exports['default'] = _React2['default'].createClass({
                             { className: 'navbar-fixed-top SysMargin' },
                             _React2['default'].createElement(_Header2['default'], { first: 'Sang',
                                 last: 'Mercado',
-                                firstColor: this.colorObject(styles.lightBlue),
-                                lastColor: this.colorObject(styles.black) })
+                                firstColor: 'lightBlue',
+                                lastColor: 'black' })
                         ),
-                        _React2['default'].createElement(_Projects2['default'], { mainHeader: this.colorObject(styles.blue),
-                            secondHeader: this.colorObject(styles.gray),
-                            projects: _jobs$projects$email$social.projects }),
+                        _React2['default'].createElement(_Projects2['default'], { mainHeader: 'blue',
+                            secondHeader: 'gray',
+                            projects: projects }),
                         _React2['default'].createElement(
                             'div',
                             { className: 'navbar-fixed-bottom' },
-                            _React2['default'].createElement(_Social2['default'], { links: _jobs$projects$email$social.social,
-                                email: _jobs$projects$email$social.email })
+                            _React2['default'].createElement(_Social2['default'], { links: social,
+                                email: email })
                         )
                     )
                 ),
@@ -46127,9 +46127,9 @@ exports['default'] = _React2['default'].createClass({
                     _React2['default'].createElement(
                         _Grid$Row$Col.Row,
                         { className: 'SysMargin' },
-                        _React2['default'].createElement(_Jobs2['default'], { mainHeader: this.colorObject(styles.white),
-                            secondHeader: this.colorObject(styles.gray),
-                            jobs: _jobs$projects$email$social.jobs })
+                        _React2['default'].createElement(_Jobs2['default'], { mainHeader: 'white',
+                            secondHeader: 'gray',
+                            jobs: jobs })
                     )
                 )
             )
@@ -46139,9 +46139,7 @@ exports['default'] = _React2['default'].createClass({
 module.exports = exports['default'];
 
 
-},{"../../information.json":318,"../HeaderComponent/HeaderComp.jsx":313,"../JobComponent/JobComp.jsx":314,"../ProjectComponent/ProjectComp.jsx":316,"../SocialComponent/SocialComp.jsx":317,"./App.less":310,"lodash":3,"react":309,"react-bootstrap":123}],312:[function(require,module,exports){
-(function() { var head = document.getElementsByTagName('head')[0]; var style = document.createElement('style'); style.type = 'text/css';var css = ".testClass{color:purple}.shape{display:inline-block;width:200px;height:200px;background:#ddf;margin:20px}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
-},{}],313:[function(require,module,exports){
+},{"../HeaderComponent/HeaderComp.jsx":311,"../JobComponent/JobComp.jsx":312,"../ProjectComponent/ProjectComp.jsx":313,"../SocialComponent/SocialComp.jsx":314,"lodash":3,"react":309,"react-bootstrap":123}],311:[function(require,module,exports){
 'use strict';
 
 var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
@@ -46158,32 +46156,21 @@ var _import = require('lodash');
 
 var _import2 = _interopRequireWildcard(_import);
 
-require('./Header.less');
-
-var styles = {
-    head: {
-        margin: '0',
-        fontSize: '5em',
-        fontWeight: '500'
-    } };
-
 exports['default'] = _React2['default'].createClass({
     displayName: 'HeaderComp',
 
     render: function render() {
-        var firstStyle = _import2['default'].assign(this.props.firstColor, styles.head);
-        var secondStyle = _import2['default'].assign(this.props.lastColor, styles.head);
         return _React2['default'].createElement(
             'div',
-            null,
+            { className: 'header' },
             _React2['default'].createElement(
                 'h1',
-                { style: firstStyle },
+                { className: this.props.firstColor },
                 this.props.first
             ),
             _React2['default'].createElement(
                 'h1',
-                { style: secondStyle },
+                { className: this.props.secondColor },
                 this.props.last
             )
         );
@@ -46192,7 +46179,7 @@ exports['default'] = _React2['default'].createClass({
 module.exports = exports['default'];
 
 
-},{"./Header.less":312,"lodash":3,"react":309}],314:[function(require,module,exports){
+},{"lodash":3,"react":309}],312:[function(require,module,exports){
 'use strict';
 
 var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
@@ -46216,10 +46203,6 @@ var _import2 = _interopRequireWildcard(_import);
 var _FlatButton$Paper = require('material-ui');
 
 var styles = {
-    head: {
-        h1: { fontSize: '1.4em', margin: '0', padding: '0' },
-        h2: { fontSize: '80%', margin: '0', paddingLeft: '1em', cursor: 'pointer' }
-    },
     modal: {
         h1: { fontSize: '1.5em', fontWeight: '300', padding: '0', margin: '0' },
         h2: { fontSize: '1.1em', fontWeight: '300', padding: '0', margin: '0' },
@@ -46235,19 +46218,19 @@ var MyModal = _React2['default'].createClass({
         var jobs = this.props.jobs.map(function (job) {
             return _React2['default'].createElement(
                 'li',
-                { style: styles.modal.li },
+                null,
                 _React2['default'].createElement(
                     'div',
                     null,
                     _React2['default'].createElement('img', { style: job.style, src: job.image }),
                     _React2['default'].createElement(
                         'h1',
-                        { style: styles.modal.h1 },
+                        null,
                         job.desc
                     ),
                     _React2['default'].createElement(
                         'h2',
-                        { style: styles.modal.h2 },
+                        null,
                         job.date
                     )
                 )
@@ -46258,8 +46241,7 @@ var MyModal = _React2['default'].createClass({
             _extends({}, this.props, { bsStyle: 'primary', animation: true }),
             _React2['default'].createElement(
                 'div',
-                { className: 'modal-body',
-                    style: styles.modal.div },
+                { className: 'modal-body job-modal' },
                 _React2['default'].createElement(
                     'ul',
                     { className: 'list-unstyled list-inline' },
@@ -46274,22 +46256,19 @@ exports['default'] = _React2['default'].createClass({
     displayName: 'JobComp',
 
     render: function render() {
-        var h1 = _import2['default'].assign({}, styles.head.h1, this.props.mainHeader);
-        var h2 = _import2['default'].assign({}, styles.head.h2, this.props.secondHeader);
         return _React2['default'].createElement(
             'div',
-            null,
+            { className: 'job' },
             _React2['default'].createElement(
                 'h1',
-                { style: h1 },
+                { className: this.props.mainHeader },
                 'Software Engineering Intern at LinkedIn',
                 _React2['default'].createElement(
                     _Modal$ModalTrigger$Button$Row$Col.ModalTrigger,
                     { modal: _React2['default'].createElement(MyModal, this.props) },
                     _React2['default'].createElement(
                         'span',
-                        { style: h2,
-                            className: 'small' },
+                        { className: this.props.secondHeader + ' second-header' },
                         'Previous Employers'
                     )
                 )
@@ -46300,9 +46279,7 @@ exports['default'] = _React2['default'].createClass({
 module.exports = exports['default'];
 
 
-},{"lodash":3,"material-ui":4,"react":309,"react-bootstrap":123}],315:[function(require,module,exports){
-(function() { var head = document.getElementsByTagName('head')[0]; var style = document.createElement('style'); style.type = 'text/css';var css = ".project-list li{padding:1em}.toolbar{background:white}.modal-dialog{width:75%}.mui-toolbar-group.mui-right .mui-icon-button{padding:0}.mui-toolbar-group.mui-right .fa.mui-font-icon{padding-left:14px}.mui-icon-button-tooltip{text-transform:capitalize}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
-},{}],316:[function(require,module,exports){
+},{"lodash":3,"material-ui":4,"react":309,"react-bootstrap":123}],313:[function(require,module,exports){
 'use strict';
 
 var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
@@ -46324,14 +46301,6 @@ var _FlatButton$FontIcon$Toolbar$ToolbarGroup$IconButton = require('material-ui'
 var _import = require('lodash');
 
 var _import2 = _interopRequireWildcard(_import);
-
-require('./Project.less');
-
-var styles = {
-    head: {
-        h1: { fontSize: '1.4em', margin: '0', padding: '0' },
-        h2: { fontSize: '80%', margin: '0', paddingLeft: '1em', cursor: 'pointer' }
-    } };
 
 var MyModal = _React2['default'].createClass({
     displayName: 'MyModal',
@@ -46396,22 +46365,19 @@ exports['default'] = _React2['default'].createClass({
     displayName: 'ProjectComp',
 
     render: function render() {
-        var h1 = _import2['default'].assign({}, styles.head.h1, this.props.mainHeader);
-        var h2 = _import2['default'].assign({}, styles.head.h2, this.props.secondHeader);
         return _React2['default'].createElement(
             'div',
-            null,
+            { className: 'project' },
             _React2['default'].createElement(
                 'h1',
-                { style: h1 },
+                { className: this.props.mainHeader },
                 'Projects',
                 _React2['default'].createElement(
                     _Well$Panel$Modal$ModalTrigger$Row$Col.ModalTrigger,
                     { modal: _React2['default'].createElement(MyModal, this.props) },
                     _React2['default'].createElement(
                         'span',
-                        { style: h2,
-                            className: 'small' },
+                        { className: this.props.secondHeader + ' second-header' },
                         'List of Projects'
                     )
                 )
@@ -46422,7 +46388,7 @@ exports['default'] = _React2['default'].createClass({
 module.exports = exports['default'];
 
 
-},{"./Project.less":315,"lodash":3,"material-ui":4,"react":309,"react-bootstrap":123}],317:[function(require,module,exports){
+},{"lodash":3,"material-ui":4,"react":309,"react-bootstrap":123}],314:[function(require,module,exports){
 'use strict';
 
 var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
@@ -46516,27 +46482,27 @@ exports['default'] = _React2['default'].createClass({
 module.exports = exports['default'];
 
 
-},{"material-ui":4,"react":309}],318:[function(require,module,exports){
+},{"material-ui":4,"react":309}],315:[function(require,module,exports){
 module.exports={
-    jobs : [
-        { image: "assets/img/in-logo.gif", desc: "Software Engineering Intern", date: "Summer 2015", style: {width: 150}},
-        { image: "assets/img/texas-state-logo.gif", desc: "Research Assistant", date: "August 2014 - Present", style: {width: 100}},
-        { image: "assets/img/usaa-logo.gif", desc: "Software Engineering Intern", date: "Summer 2014", style: {width: 100}},
-        { image: "assets/img/texas-state-logo.gif", desc: "Instructional Assistant", date: "September 2013 - Summer 2014", style: {width: 100}},
-        { image: "assets/img/polycom-logo.gif", desc: "Localization Software Intern", date: "Summer 2013", style: {width: 130}}
+    "jobs" : [
+        { "image": "assets/img/in-logo.gif", "desc": "Software Engineering Intern", "date": "Summer 2015", "style": {"width": 150}},
+        { "image": "assets/img/texas-state-logo.gif", "desc": "Research Assistant", "date": "August 2014 - Present", "style": {"width": 100}},
+        { "image": "assets/img/usaa-logo.gif", "desc": "Software Engineering Intern", "date": "Summer 2014", "style": {"width": 100}},
+        { "image": "assets/img/texas-state-logo.gif", "desc": "Instructional Assistant", "date": "September 2013 - Summer 2014", "style": {"width": 100}},
+        { "image": "assets/img/polycom-logo.gif", "desc": "Localization Software Intern", "date": "Summer 2013", "style": {"width": 130}}
     ],
-    projects : [
-        { title: "Google Search with TF-IDF Implementation", github: "https://github.com/sangm/search-rerank", live: "http://dm.sangm.io"},
-        { title: "Tutoring Check-in", live: "http://node.sangm.net" },
-        { title: "TwitterSearch", github: "https://github.com/sangm/twitter-search.git", youtube: "https://www.youtube.com/watch?v=DgvQhfjD2cY" }
+    "projects" : [
+        { "title": "Google Search with TF-IDF Implementation", "github": "https://github.com/sangm/search-rerank", "live": "http://dm.sangm.io"},
+        { "title": "Tutoring Check-in", "live": "http://node.sangm.net" },
+        { "title": "TwitterSearch", "github": "https://github.com/sangm/twitter-search.git", "youtube": "https://www.youtube.com/watch?v=DgvQhfjD2cY" }
     ],
-    social : [
-        { network: 'github', src: "https://github.com/sangm" }, 
-        { network: 'linkedin', src:"https://linkedin.com/in/sangmercado" }
+    "social" : [
+        { "network": "github", "src": "https://github.com/sangm" }, 
+        { "network": "linkedin", "src":"https://linkedin.com/in/sangmercado" }
     ],
-    email : {
-        network: "inbox", 
-        src: "sang.mercado@gmail.com" 
+    "email" : {
+        "network": "inbox", 
+        "src": "sang.mercado@gmail.com" 
     }
 }
 

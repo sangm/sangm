@@ -38,7 +38,7 @@ gulp.task('less', function() {
 })
 
 gulp.task('static', function() {
-    browserify('./static.js')
+    browserify('./src/static.js')
         .transform(babelify)
         .transform(reactify)
         .transform(lessify)
@@ -47,7 +47,7 @@ gulp.task('static', function() {
           .on('error', function(err) {
               gutil.log(err);
           })
-        .pipe(source('./static.js'))
+        .pipe(source('./src/static.js'))
         .pipe(streamify(concat('static.js')))
         .pipe(gulp.dest('dist'))
 
@@ -66,7 +66,7 @@ gulp.task('reload', function() {
 })
 
 gulp.task('watch', function() {
-    gulp.watch('src/**/*', ['build', 'reload'])
+    gulp.watch('src/**/*', ['build', 'less', 'reload'])
 })
 
 gulp.task('default', ['build'])

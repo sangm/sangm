@@ -4,15 +4,6 @@ import {FlatButton, FontIcon, Toolbar, ToolbarGroup, IconButton} from 'material-
 
 import _ from 'lodash'
 
-require('./Project.less')
-
-let styles = {
-    head: {
-        h1: { fontSize: '1.4em', margin: '0', padding: '0'},
-        h2: { fontSize: '80%', margin: '0', paddingLeft: '1em', cursor: 'pointer'}
-    },
-}
-
 const MyModal = React.createClass({
     getIcon(name) {
         if (name === "live")
@@ -61,15 +52,12 @@ const MyModal = React.createClass({
 
 export default React.createClass({
     render() {
-        let h1 = _.assign({}, styles.head.h1, this.props.mainHeader);
-        let h2 = _.assign({}, styles.head.h2, this.props.secondHeader);
         return (
-            <div>
-                <h1 style={h1}>
+            <div className="project">
+                <h1 className={this.props.mainHeader}>
                     Projects 
                     <ModalTrigger modal={<MyModal {...this.props} />}>
-                        <span style={h2}
-                              className="small"> 
+                        <span className={this.props.secondHeader + ' second-header'}> 
                             List of Projects 
                         </span>
                     </ModalTrigger>

@@ -9,9 +9,19 @@
     justify-content: @content;
 }
 
+.Color(@color) { color: @color; } 
+.lightBlue { .Color(@lightBlue); }
+.navy      { .Color(@navy); }
+.red       { .Color(@red); }
+.white     { .Color(@white); }
+.blue      { .Color(@blue); }
+.gray      { .Color(@gray); }
+.black     { .Color(@black); }
+
 .SysMargin  { margin: @margin; }
 .SysPadding { padding: @padding; }
 .SysHeight  { height: @height; }
+
 
 .site-container {
     font-family: 'Roboto', 'sans-serif';
@@ -31,4 +41,5 @@
     .SysHeight;
     background: @navy;
 }
+
 
