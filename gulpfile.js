@@ -37,22 +37,6 @@ gulp.task('less', function() {
         .pipe(gulp.dest('./assets/css'))
 })
 
-gulp.task('static', function() {
-    browserify('./src/static.js')
-        .transform(babelify)
-        .transform(reactify)
-        .transform(lessify)
-        .transform('varlessify', { file: './src/variables.less' })
-        .bundle()
-          .on('error', function(err) {
-              gutil.log(err);
-          })
-        .pipe(source('./src/static.js'))
-        .pipe(streamify(concat('static.js')))
-        .pipe(gulp.dest('dist'))
-
-})
-
 gulp.task('server', function() {
     connect.server({
         root: './',

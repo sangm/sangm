@@ -21,7 +21,7 @@ var _injectTapEventPlugin2 = _interopRequireWildcard(_injectTapEventPlugin);
 
 _injectTapEventPlugin2['default']();
 
-_React2['default'].render(_React2['default'].createElement(_App2['default'], { info: _info2['default'] }), document.body);
+_React2['default'].render(_React2['default'].createElement(_App2['default'], { info: _info2['default'] }), document.getElementById('content'));
 
 
 },{"./components/AppComponent/AppComp.jsx":310,"./information.json":315,"react":309,"react-tap-event-plugin":136}],2:[function(require,module,exports){
