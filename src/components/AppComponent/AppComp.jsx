@@ -6,20 +6,11 @@ import Projects from '../ProjectComponent/ProjectComp.jsx'
 import {Grid, Row, Col} from 'react-bootstrap'
 
 import _ from 'lodash'
+import {jobs, projects, email, social} from '../../information.json'
 
 require('./App.less')
 
 var varless = require('varless');
-
-
-
-let jobs = [
-    { image: "assets/img/in-logo.gif", desc: "Software Engineering Intern", date: "Summer 2015", style: {width: 150}},
-    { image: "assets/img/texas-state-logo.gif", desc: "Research Assistant", date: "August 2014 - Present", style: {width: 100}},
-    { image: "assets/img/usaa-logo.gif", desc: "Software Engineering Intern", date: "Summer 2014", style: {width: 100}},
-    { image: "assets/img/texas-state-logo.gif", desc: "Instructional Assistant", date: "September 2013 - Summer 2014", style: {width: 100}},
-    { image: "assets/img/polycom-logo.gif", desc: "Localization Software Intern", date: "Summer 2013", style: {width: 130}}
-];
 
 let styles = {
     lightBlue: varless.get('lightBlue'),
@@ -50,12 +41,12 @@ export default React.createClass({
                                         firstColor={this.colorObject(styles.lightBlue)}
                                         lastColor={this.colorObject(styles.black)} />
                             </div>
-                            <Projects projects={['project',2,3]} 
-                                      mainHeader={this.colorObject(styles.blue)}
-                                      secondHeader={this.colorObject(styles.gray)} />
+                            <Projects mainHeader={this.colorObject(styles.blue)}
+                                      secondHeader={this.colorObject(styles.gray)} 
+                                      projects={projects} />
                             <div className="navbar-fixed-bottom">
-                                <Social links={[{network: 'github', src: "https://github.com/sangm"}, {network: 'linkedin', src:"https://linkedin.com/in/sangmercado"}]}
-                                        email={{network: 'inbox', src:'sang.mercado@gmail.com'}}/>
+                                <Social links={social}
+                                        email={email}/>
                             </div>
                         </Row>
                     </Col>

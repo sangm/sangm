@@ -27,7 +27,7 @@ export default React.createClass({
     getIcons() {
         return this.props.links.map(link => {
             return (
-                <li>
+                <li key={link.src}>
                     <a href={link.src}>
                         <FloatingActionButton iconClassName={this.getIcon(link.network)} 
                                               mini={true} 

@@ -46063,11 +46063,11 @@ var _import = require('lodash');
 
 var _import2 = _interopRequireWildcard(_import);
 
+var _jobs$projects$email$social = require('../../information.json');
+
 require('./App.less');
 
 
-
-var jobs = [{ image: 'assets/img/in-logo.gif', desc: 'Software Engineering Intern', date: 'Summer 2015', style: { width: 150 } }, { image: 'assets/img/texas-state-logo.gif', desc: 'Research Assistant', date: 'August 2014 - Present', style: { width: 100 } }, { image: 'assets/img/usaa-logo.gif', desc: 'Software Engineering Intern', date: 'Summer 2014', style: { width: 100 } }, { image: 'assets/img/texas-state-logo.gif', desc: 'Instructional Assistant', date: 'September 2013 - Summer 2014', style: { width: 100 } }, { image: 'assets/img/polycom-logo.gif', desc: 'Localization Software Intern', date: 'Summer 2013', style: { width: 130 } }];
 
 var styles = {
     lightBlue: "#3498db",
@@ -46108,14 +46108,14 @@ exports['default'] = _React2['default'].createClass({
                                 firstColor: this.colorObject(styles.lightBlue),
                                 lastColor: this.colorObject(styles.black) })
                         ),
-                        _React2['default'].createElement(_Projects2['default'], { projects: ['project', 2, 3],
-                            mainHeader: this.colorObject(styles.blue),
-                            secondHeader: this.colorObject(styles.gray) }),
+                        _React2['default'].createElement(_Projects2['default'], { mainHeader: this.colorObject(styles.blue),
+                            secondHeader: this.colorObject(styles.gray),
+                            projects: _jobs$projects$email$social.projects }),
                         _React2['default'].createElement(
                             'div',
                             { className: 'navbar-fixed-bottom' },
-                            _React2['default'].createElement(_Social2['default'], { links: [{ network: 'github', src: 'https://github.com/sangm' }, { network: 'linkedin', src: 'https://linkedin.com/in/sangmercado' }],
-                                email: { network: 'inbox', src: 'sang.mercado@gmail.com' } })
+                            _React2['default'].createElement(_Social2['default'], { links: _jobs$projects$email$social.social,
+                                email: _jobs$projects$email$social.email })
                         )
                     )
                 ),
@@ -46129,7 +46129,7 @@ exports['default'] = _React2['default'].createClass({
                         { className: 'SysMargin' },
                         _React2['default'].createElement(_Jobs2['default'], { mainHeader: this.colorObject(styles.white),
                             secondHeader: this.colorObject(styles.gray),
-                            jobs: jobs })
+                            jobs: _jobs$projects$email$social.jobs })
                     )
                 )
             )
@@ -46139,7 +46139,7 @@ exports['default'] = _React2['default'].createClass({
 module.exports = exports['default'];
 
 
-},{"../HeaderComponent/HeaderComp.jsx":313,"../JobComponent/JobComp.jsx":314,"../ProjectComponent/ProjectComp.jsx":315,"../SocialComponent/SocialComp.jsx":316,"./App.less":310,"lodash":3,"react":309,"react-bootstrap":123}],312:[function(require,module,exports){
+},{"../../information.json":318,"../HeaderComponent/HeaderComp.jsx":313,"../JobComponent/JobComp.jsx":314,"../ProjectComponent/ProjectComp.jsx":316,"../SocialComponent/SocialComp.jsx":317,"./App.less":310,"lodash":3,"react":309,"react-bootstrap":123}],312:[function(require,module,exports){
 (function() { var head = document.getElementsByTagName('head')[0]; var style = document.createElement('style'); style.type = 'text/css';var css = ".testClass{color:purple}.shape{display:inline-block;width:200px;height:200px;background:#ddf;margin:20px}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
 },{}],313:[function(require,module,exports){
 'use strict';
@@ -46301,9 +46301,13 @@ module.exports = exports['default'];
 
 
 },{"lodash":3,"material-ui":4,"react":309,"react-bootstrap":123}],315:[function(require,module,exports){
+(function() { var head = document.getElementsByTagName('head')[0]; var style = document.createElement('style'); style.type = 'text/css';var css = ".project-list li{padding:1em}.toolbar{background:white}.modal-dialog{width:75%}.mui-toolbar-group.mui-right .mui-icon-button{padding:0}.mui-toolbar-group.mui-right .fa.mui-font-icon{padding-left:14px}.mui-icon-button-tooltip{text-transform:capitalize}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
+},{}],316:[function(require,module,exports){
 'use strict';
 
 var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 Object.defineProperty(exports, '__esModule', {
     value: true
@@ -46313,15 +46317,80 @@ var _React = require('react');
 
 var _React2 = _interopRequireWildcard(_React);
 
+var _Well$Panel$Modal$ModalTrigger$Row$Col = require('react-bootstrap');
+
+var _FlatButton$FontIcon$Toolbar$ToolbarGroup$IconButton = require('material-ui');
+
 var _import = require('lodash');
 
 var _import2 = _interopRequireWildcard(_import);
+
+require('./Project.less');
 
 var styles = {
     head: {
         h1: { fontSize: '1.4em', margin: '0', padding: '0' },
         h2: { fontSize: '80%', margin: '0', paddingLeft: '1em', cursor: 'pointer' }
     } };
+
+var MyModal = _React2['default'].createClass({
+    displayName: 'MyModal',
+
+    getIcon: function getIcon(name) {
+        if (name === 'live') name = 'laptop';
+        return 'fa fa-' + name.toLowerCase();
+    },
+
+    render: function render() {
+        var _this = this;
+
+        var projects = this.props.projects.map(function (project) {
+            var icons = ['github', 'live', 'youtube'];
+            icons = icons.map(function (icon) {
+                return _React2['default'].createElement(_FlatButton$FontIcon$Toolbar$ToolbarGroup$IconButton.IconButton, { iconClassName: _this.getIcon(icon),
+                    href: project[icon] ? project[icon] : '#',
+                    linkButton: true,
+                    tooltip: project[icon] == null ? 'Not Available' : icon });
+            });
+
+            return _React2['default'].createElement(
+                'li',
+                null,
+                _React2['default'].createElement(
+                    _Well$Panel$Modal$ModalTrigger$Row$Col.Panel,
+                    null,
+                    _React2['default'].createElement(
+                        _FlatButton$FontIcon$Toolbar$ToolbarGroup$IconButton.Toolbar,
+                        { className: 'toolbar' },
+                        _React2['default'].createElement(
+                            _FlatButton$FontIcon$Toolbar$ToolbarGroup$IconButton.ToolbarGroup,
+                            { key: 0, float: 'left' },
+                            _React2['default'].createElement(_FlatButton$FontIcon$Toolbar$ToolbarGroup$IconButton.FlatButton, { label: project.title })
+                        ),
+                        _React2['default'].createElement(
+                            _FlatButton$FontIcon$Toolbar$ToolbarGroup$IconButton.ToolbarGroup,
+                            { key: 1, float: 'right' },
+                            icons
+                        )
+                    )
+                )
+            );
+        });
+        return _React2['default'].createElement(
+            _Well$Panel$Modal$ModalTrigger$Row$Col.Modal,
+            _extends({}, this.props, { bsStyle: 'primary', animation: true }),
+            _React2['default'].createElement(
+                'div',
+                { className: 'modal-body' },
+                _React2['default'].createElement(
+                    'ul',
+                    { className: 'list-unstyled project-list' },
+                    projects
+                )
+            )
+        );
+    }
+});
 
 exports['default'] = _React2['default'].createClass({
     displayName: 'ProjectComp',
@@ -46335,25 +46404,25 @@ exports['default'] = _React2['default'].createClass({
             _React2['default'].createElement(
                 'h1',
                 { style: h1 },
-                'Project Demonstration',
+                'Projects',
                 _React2['default'].createElement(
-                    'span',
-                    { style: h2 },
-                    'List of Projects'
+                    _Well$Panel$Modal$ModalTrigger$Row$Col.ModalTrigger,
+                    { modal: _React2['default'].createElement(MyModal, this.props) },
+                    _React2['default'].createElement(
+                        'span',
+                        { style: h2,
+                            className: 'small' },
+                        'List of Projects'
+                    )
                 )
             )
-        );
-        return _React2['default'].createElement(
-            'div',
-            null,
-            this.props.projects
         );
     }
 });
 module.exports = exports['default'];
 
 
-},{"lodash":3,"react":309}],316:[function(require,module,exports){
+},{"./Project.less":315,"lodash":3,"material-ui":4,"react":309,"react-bootstrap":123}],317:[function(require,module,exports){
 'use strict';
 
 var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
@@ -46399,7 +46468,7 @@ exports['default'] = _React2['default'].createClass({
         return this.props.links.map(function (link) {
             return _React2['default'].createElement(
                 'li',
-                null,
+                { key: link.src },
                 _React2['default'].createElement(
                     'a',
                     { href: link.src },
@@ -46447,4 +46516,28 @@ exports['default'] = _React2['default'].createClass({
 module.exports = exports['default'];
 
 
-},{"material-ui":4,"react":309}]},{},[1]);
+},{"material-ui":4,"react":309}],318:[function(require,module,exports){
+module.exports={
+    jobs : [
+        { image: "assets/img/in-logo.gif", desc: "Software Engineering Intern", date: "Summer 2015", style: {width: 150}},
+        { image: "assets/img/texas-state-logo.gif", desc: "Research Assistant", date: "August 2014 - Present", style: {width: 100}},
+        { image: "assets/img/usaa-logo.gif", desc: "Software Engineering Intern", date: "Summer 2014", style: {width: 100}},
+        { image: "assets/img/texas-state-logo.gif", desc: "Instructional Assistant", date: "September 2013 - Summer 2014", style: {width: 100}},
+        { image: "assets/img/polycom-logo.gif", desc: "Localization Software Intern", date: "Summer 2013", style: {width: 130}}
+    ],
+    projects : [
+        { title: "Google Search with TF-IDF Implementation", github: "https://github.com/sangm/search-rerank", live: "http://dm.sangm.io"},
+        { title: "Tutoring Check-in", github: "https://github.com/sangm/node.git", live: "http://node.sangm.net"},
+        { title: "TwitterSearch", github: "https://github.com/sangm/node.git", live: "http://node.sangm.net"}
+    ],
+    social : [
+        { network: 'github', src: "https://github.com/sangm" }, 
+        { network: 'linkedin', src:"https://linkedin.com/in/sangmercado" }
+    ],
+    email : {
+        network: "inbox", 
+        src: "sang.mercado@gmail.com" 
+    }
+}
+
+},{}]},{},[1]);
