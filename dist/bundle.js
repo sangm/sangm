@@ -46527,8 +46527,8 @@ module.exports={
     ],
     projects : [
         { title: "Google Search with TF-IDF Implementation", github: "https://github.com/sangm/search-rerank", live: "http://dm.sangm.io"},
-        { title: "Tutoring Check-in", github: "https://github.com/sangm/node.git", live: "http://node.sangm.net"},
-        { title: "TwitterSearch", github: "https://github.com/sangm/node.git", live: "http://node.sangm.net"}
+        { title: "Tutoring Check-in", live: "http://node.sangm.net" },
+        { title: "TwitterSearch", github: "https://github.com/sangm/twitter-search.git", youtube: "https://www.youtube.com/watch?v=DgvQhfjD2cY" }
     ],
     social : [
         { network: 'github', src: "https://github.com/sangm" }, 

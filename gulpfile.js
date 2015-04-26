@@ -10,6 +10,10 @@ var babelify = require('babelify');
 var reactify = require('reactify');
 var lessify = require('node-lessify');
 
+var less = require('gulp-less');
+var minifyCSS = require('gulp-minify-css');
+var concatCss = require('gulp-concat-css');
+
 gulp.task('build', function() {
     browserify('./src/app.js')
         .transform(babelify)
@@ -23,6 +27,30 @@ gulp.task('build', function() {
         .pipe(source('./src/app.js'))
         .pipe(streamify(concat('bundle.js')))
         .pipe(gulp.dest('dist'))
+})
+
+gulp.task('less', function() {
+    gulp.src('./src/components/**/*.less')
+        .pipe(less())
+        .pipe(minifyCSS())
+        .pipe(concatCss("bundle.css"))
+        .pipe(gulp.dest('./assets/css'))
+})
+
+gulp.task('static', function() {
+    browserify('./static.js')
+        .transform(babelify)
+        .transform(reactify)
+        .transform(lessify)
+        .transform('varlessify', { file: './src/variables.less' })
+        .bundle()
+          .on('error', function(err) {
+              gutil.log(err);
+          })
+        .pipe(source('./static.js'))
+        .pipe(streamify(concat('static.js')))
+        .pipe(gulp.dest('dist'))
+
 })
 
 gulp.task('server', function() {
