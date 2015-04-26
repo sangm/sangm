@@ -1,3 +1,85 @@
+.SysHeight,
+.left-div,
+.right-div {
+  height: 100%;
+}
+
+.SysPadding,
+.left-div {
+  padding: 0;
+}
+
+.left-div,
+.right-div {
+  display: -webkit-flex;
+}
+
+.lightBlue {
+  color: #3498db;
+}
+
+.navy {
+  color: #2c3e50;
+}
+
+.red {
+  color: #e74c3c;
+}
+
+.white {
+  color: #ecf0f1;
+}
+
+.blue {
+  color: #2980b9;
+}
+
+.gray {
+  color: #777;
+}
+
+.black {
+  color: #000;
+}
+
+.SysMargin {
+  margin: 3em;
+}
+
+.site-container {
+  font-family: Roboto,sans-serif;
+  height: 100%;
+  cursor: default;
+}
+
+.left-div {
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.right-div {
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 0;
+  background: #2c3e50;
+}
+.header h1 {
+  margin: 0;
+  font-size: 5em;
+  font-weight: 500;
+}
 .job h1 {
   font-size: 1.4em;
   margin: 0;
@@ -67,80 +149,4 @@
   margin: 0;
   padding-left: 1em;
   cursor: pointer;
-}
-.SysHeight,
-.left-div,
-.right-div {
-  height: 100%;
-}
-
-.SysPadding,
-.left-div {
-  padding: 0;
-}
-
-.left-div,
-.right-div {
-  display: -webkit-flex;
-}
-
-.lightBlue {
-  color: #3498db;
-}
-
-.navy {
-  color: #2c3e50;
-}
-
-.red {
-  color: #e74c3c;
-}
-
-.white {
-  color: #ecf0f1;
-}
-
-.blue {
-  color: #2980b9;
-}
-
-.gray {
-  color: #777;
-}
-
-.black {
-  color: #000;
-}
-
-.SysMargin {
-  margin: 3em;
-}
-
-.site-container {
-  font-family: Roboto,sans-serif;
-  height: 100%;
-  cursor: default;
-}
-
-.left-div {
-  display: flex;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: flex-end;
-  justify-content: flex-end;
-}
-
-.right-div {
-  display: flex;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  padding: 0;
-  background: #2c3e50;
-}
-.header h1 {
-  margin: 0;
-  font-size: 5em;
-  font-weight: 500;
 }

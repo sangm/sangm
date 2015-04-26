@@ -11,9 +11,13 @@ var reactify = require('reactify');
 var lessify = require('node-lessify');
 
 var less = require('gulp-less');
-var minifyCSS = require('gulp-minify-css');
 var concatCss = require('gulp-concat-css');
 var uglify = require('gulp-uglify');
+
+var LessPluginCleanCSS = require('less-plugin-clean-css'),
+    LessPluginAutoPrefix = require('less-plugin-autoprefix'),
+    cleancss = new LessPluginCleanCSS({ advanced: true }),
+    autoprefix= new LessPluginAutoPrefix({ browsers: ["last 2 versions"] });
 
 gulp.task('build', function() {
     browserify('./src/app.js')
@@ -35,8 +39,9 @@ gulp.task('build', function() {
 
 gulp.task('less', function() {
     gulp.src('./src/components/**/*.less')
-        .pipe(less())
-        .pipe(minifyCSS())
+        .pipe(less({
+            plugins: [autoprefix, cleancss]
+        }))
         .pipe(concatCss("bundle.css"))
         .pipe(gulp.dest('./assets/css'))
 })
@@ -57,6 +62,6 @@ gulp.task('watch', function() {
     gulp.watch('src/**/*', ['build', 'less', 'reload'])
 })
 
-gulp.task('default', ['build'])
+gulp.task('default', ['build', 'less'])
 gulp.task('develop', ['server', 'watch'])
 
