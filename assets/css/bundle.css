@@ -1,3 +1,8 @@
+.header h1 {
+  margin: 0;
+  font-size: 5em;
+  font-weight: 500;
+}
 .SysHeight,
 .left-div,
 .right-div {
@@ -75,11 +80,6 @@
   padding: 0;
   background: #2c3e50;
 }
-.header h1 {
-  margin: 0;
-  font-size: 5em;
-  font-weight: 500;
-}
 .job h1 {
   font-size: 1.4em;
   margin: 0;
@@ -91,6 +91,14 @@
   margin: 0;
   padding-left: 1em;
   cursor: pointer;
+}
+
+.job .mui-flat-button {
+  background-color: #2c3e50;
+}
+
+.job .mui-flat-button:hover {
+  background-color: #ecf0f1;
 }
 
 .job-modal {
@@ -145,8 +153,12 @@
 }
 
 .project .second-header {
-  font-size: 80%;
   margin: 0;
   padding-left: 1em;
   cursor: pointer;
+  color: gray;
+}
+
+.disabled {
+  opacity: .2;
 }

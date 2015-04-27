@@ -15,7 +15,9 @@ let styles = {
     },
 
     ul: {
-        margin: '1em'
+        margin: '1em',
+        marginBottom: '6.2em'
+        
     }
 }
 
