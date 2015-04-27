@@ -15,8 +15,9 @@ const MyModal = React.createClass({
         let projects = this.props.projects.map(project => {
             let icons = ["github", "live", "youtube"];
             icons = icons.map(icon => {
+                    let className = `${this.getIcon(icon)} ${project[icon] == null ? "disabled" : null }`
                     return (
-                        <IconButton iconClassName={this.getIcon(icon)} 
+                        <IconButton iconClassName={className} 
                                     href={project[icon] ? project[icon] : "#"}
                                     linkButton={true}
                                     tooltip={project[icon] == null ? 'Not Available' : icon}/>
@@ -40,7 +41,7 @@ const MyModal = React.createClass({
         })
         return (
             <Modal {...this.props} bsStyle='primary' animation={true}>
-                <div className='modal-body'>
+                <div className='modal-body project-modal'>
                     <ul className="list-unstyled project-list">
                         {projects}
                     </ul>
@@ -57,8 +58,9 @@ export default React.createClass({
                 <h1 className={this.props.mainHeader}>
                     Projects 
                     <ModalTrigger modal={<MyModal {...this.props} />}>
-                        <span className={this.props.secondHeader + ' second-header'}> 
-                            List of Projects 
+                        <span className={'second-header'}> 
+                            <FlatButton className={this.props.secondHeader}
+                                        label="List of Projects" />     
                         </span>
                     </ModalTrigger>
                 </h1>
