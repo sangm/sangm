@@ -24,7 +24,6 @@ gulp.task('build', function() {
         .transform(babelify)
         .transform(reactify)
         .transform(lessify)
-        .transform('varlessify', { file: './src/variables.less' })
         .bundle()
           .on('error', function(err) {
               gutil.log(err);

@@ -12,7 +12,7 @@ let renderedLayout = layoutTemplate({
     contents: renderedComp
 })
 
-fs.writeFile(__dirname + '/../index.html', renderedLayout, function (err) {
+fs.writeFile(__dirname + '/../dist/index.html', renderedLayout, function (err) {
       if (err) return console.log(err);
         console.log('index.html generated from ReactJS');
 });

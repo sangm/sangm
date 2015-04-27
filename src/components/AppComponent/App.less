@@ -1,5 +1,7 @@
 @import "../../variables.less";
 
+@minWidth: 3;
+
 .FlexboxCenter(@content) {
     display: -webkit-flex;
     display: flex;
@@ -30,16 +32,24 @@
 }
 
 .left-div {
-    .FlexboxCenter(flex-end);
+    .FlexboxCenter(center);
     .SysPadding;
     .SysHeight;
+
+    @media @mobile { text-align: center; }
+    @media @tablet { text-align: center; }
 }
 
 .right-div {
-    .FlexboxCenter(flex-start);
+    .FlexboxCenter(center);
     .SysPadding;
     .SysHeight;
     background: @navy;
+
+    @media @mobile { text-align: center; }
+    @media @tablet { text-align: center; }
 }
+
+.modal-primary { margin: 0 auto; } 
 
 
