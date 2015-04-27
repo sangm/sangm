@@ -1,8 +1,3 @@
-.header h1 {
-  margin: 0;
-  font-size: 5em;
-  font-weight: 500;
-}
 .SysHeight,
 .left-div,
 .right-div {
@@ -79,6 +74,11 @@
   justify-content: flex-start;
   padding: 0;
   background: #2c3e50;
+}
+.header h1 {
+  margin: 0;
+  font-size: 5em;
+  font-weight: 500;
 }
 .job h1 {
   font-size: 1.4em;
@@ -157,6 +157,14 @@
   padding-left: 1em;
   cursor: pointer;
   color: gray;
+}
+
+.project .mui-flat-button {
+  background-color: #fff;
+}
+
+.project .mui-flat-button:hover {
+  background-color: rgba(0,188,212,.1);
 }
 
 .disabled {

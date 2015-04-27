@@ -1,3 +1,5 @@
+@import "../../variables.less";
+
 .project-list li { padding: 1em; }
 .toolbar { background: white; }
 .modal-dialog { width: 75%; }
@@ -20,7 +22,8 @@
         cursor: pointer; 
         color: gray; 
     }
-
+   & .mui-flat-button { background-color: white; }
+   & .mui-flat-button:hover { background-color: rgba(0, 188, 212, .1); }
 }
 
 .disabled { opacity: .2; }
