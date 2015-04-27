@@ -43,8 +43,9 @@ export default React.createClass({
             <div className="job">
                 <h1 className={this.props.mainHeader}>Software Engineering Intern at LinkedIn 
                     <ModalTrigger modal={<MyModal {...this.props} />}>
-                        <span className={this.props.secondHeader + ' second-header'}>
-                           Previous Employers 
+                        <span className={'second-header'}>
+                            <FlatButton className={this.props.secondHeader} 
+                                        label="Previous Employers" />
                         </span>
                     </ModalTrigger>
                 </h1>
