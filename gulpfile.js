@@ -61,6 +61,12 @@ gulp.task('watch', function() {
     gulp.watch('src/**/*', ['build', 'less', 'reload'])
 })
 
+gulp.task('assets', function() {
+    gulp.src('assets/**/*')
+        .pipe(gulp.dest('dist/assets'))
+})
+
 gulp.task('default', ['build', 'less'])
 gulp.task('develop', ['server', 'watch'])
+gulp.task('prod', ['build', 'less', 'assets']);
 
