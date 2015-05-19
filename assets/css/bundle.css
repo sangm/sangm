@@ -15,54 +15,6 @@
     font-size: 3em;
   }
 }
-.project-list li {
-  padding: 1em;
-}
-
-.toolbar {
-  background: #fff;
-}
-
-.modal-dialog {
-  width: 75%;
-}
-
-.mui-toolbar-group.mui-right .mui-icon-button {
-  padding: 0;
-}
-
-.mui-toolbar-group.mui-right .fa.mui-font-icon {
-  padding-left: 14px;
-}
-
-.mui-icon-button-tooltip {
-  text-transform: capitalize;
-}
-
-.project h1 {
-  font-size: 1.4em;
-  margin: 0;
-  padding: 0;
-}
-
-.project .second-header {
-  margin: 0;
-  padding-left: 1em;
-  cursor: pointer;
-  color: gray;
-}
-
-.project .mui-flat-button {
-  background-color: #fff;
-}
-
-.project .mui-flat-button:hover {
-  background-color: rgba(0,188,212,.1);
-}
-
-.disabled {
-  opacity: .2;
-}
 .SysHeight,
 .left-div,
 .right-div {
@@ -199,4 +151,56 @@
 
 .job-modal li {
   padding: .5em;
+}
+.project-list li {
+  padding: 1em;
+}
+
+.toolbar {
+  background: #fff;
+}
+
+.modal-dialog {
+  width: 75%;
+}
+
+.project-desc {
+  cursor: default;
+}
+
+.mui-toolbar-group.mui-right .mui-icon-button {
+  padding: 0;
+}
+
+.mui-toolbar-group.mui-right .fa.mui-font-icon {
+  padding-left: 14px;
+}
+
+.mui-icon-button-tooltip {
+  text-transform: capitalize;
+}
+
+.project h1 {
+  font-size: 1.4em;
+  margin: 0;
+  padding: 0;
+}
+
+.project .second-header {
+  margin: 0;
+  padding-left: 1em;
+  cursor: pointer;
+  color: gray;
+}
+
+.project .mui-flat-button {
+  background-color: #fff;
+}
+
+.project .mui-flat-button:hover {
+  background-color: rgba(0,188,212,.1);
+}
+
+.disabled {
+  opacity: .2;
 }

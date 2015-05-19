@@ -164,6 +164,10 @@
   width: 75%;
 }
 
+.project-desc {
+  cursor: default;
+}
+
 .mui-toolbar-group.mui-right .mui-icon-button {
   padding: 0;
 }

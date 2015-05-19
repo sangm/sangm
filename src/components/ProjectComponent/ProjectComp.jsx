@@ -28,8 +28,10 @@ const MyModal = React.createClass({
                 <li>
                     <Panel>
                         <Toolbar className="toolbar">
-                            <ToolbarGroup key={0} float="left">
-                                <FlatButton label={project.title} />
+                            <ToolbarGroup key={0} 
+                                          float="left">
+                                <FlatButton label={project.title} 
+                                className="project-desc"/>
                             </ToolbarGroup>
                             <ToolbarGroup key={1} float="right">
                                 {icons}
