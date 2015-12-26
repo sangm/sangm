@@ -2,7 +2,13 @@
   "name": "sangm.io",
   "version": "1.0.0",
   "description": "Personal website built on React",
-  "repository": "sangm/sangm",
+  "repository": "sangm/sangm.github.io",
+  "babel": {
+    "presets": [
+      "react",
+      "es2015"
+    ]
+  },
   "scripts": {
     "build": "gulp build",
     "server": "gulp server",
@@ -12,6 +18,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "babel-register": "^6.3.13",
     "babelify": "^6.0.2",
     "browserify": "^9.0.8",
     "browserify-css": "^0.6.1",
@@ -27,6 +35,7 @@
     "less-plugin-autoprefix": "^1.4.1",
     "less-plugin-clean-css": "^1.5.0",
     "node-lessify": "0.0.10",
+    "react-dom": "^0.14.3",
     "reactify": "^1.1.0",
     "vinyl-source-stream": "^1.1.0"
   },

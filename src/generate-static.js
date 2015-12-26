@@ -13,8 +13,11 @@ let renderedLayout = layoutTemplate({
 })
 
 fs.writeFile(__dirname + '/../dist/index.html', renderedLayout, function (err) {
-      if (err) return console.log(err);
+      if (err) {
+          return console.log(err);
+      } else {
         console.log('index.html generated from ReactJS');
+      }
 });
 
 
