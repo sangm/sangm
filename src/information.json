@@ -1,46 +1,4 @@
 {
-  "jobs": [
-    {
-      "image": "assets/img/in-logo.gif",
-      "desc": "Software Engineering Intern",
-      "date": "Summer 2015",
-      "style": {
-        "width": 150
-      }
-    },
-    {
-      "image": "assets/img/texas-state-logo.gif",
-      "desc": "Research Assistant",
-      "date": "August 2014 - Present",
-      "style": {
-        "width": 100
-      }
-    },
-    {
-      "image": "assets/img/usaa-logo.gif",
-      "desc": "Software Engineering Intern",
-      "date": "Summer 2014",
-      "style": {
-        "width": 100
-      }
-    },
-    {
-      "image": "assets/img/texas-state-logo.gif",
-      "desc": "Instructional Assistant",
-      "date": "September 2013 - Summer 2014",
-      "style": {
-        "width": 100
-      }
-    },
-    {
-      "image": "assets/img/polycom-logo.gif",
-      "desc": "Localization Software Intern",
-      "date": "Summer 2013",
-      "style": {
-        "width": 130
-      }
-    }
-  ],
   "projects": [
     {
       "title": "Account Management",
@@ -52,10 +10,17 @@
     {
       "title": "Account Management",
       "github": "https://github.com/sangm/AccountManagement",
-      "image": "https://google.com",
+      "image": "https://github.com/sangm/AccountManagement/raw/master/assignment-related-resources/images/accountList.png",
       "youtube": "https://youtube.com",
       "live": ""
-    }
+    },
+    {
+      "title": "Account Management",
+      "github": "https://github.com/sangm/AccountManagement",
+      "image": "https://github.com/sangm/AccountManagement/raw/master/assignment-related-resources/images/accountList.png",
+      "youtube": "https://youtube.com",
+      "live": ""
+    },
   ],
   "github": "https://github.com/sangm",
   "email": "hi@sangm.io",

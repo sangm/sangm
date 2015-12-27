@@ -40,13 +40,22 @@ export default class ProjectComponent extends React.Component {
         window.removeEventListener("resize", this.updateDimensions);
     }
 
+    handleCard = () => {
+        console.log('called')
+    }
+
     render() {
         let {projects} = this.props;
 
-        let generateTile = (project) => {
-            const iconButton = <IconButton iconClassName="fa fa-github" />;
+        let generateTile = (project, index) => {
+            const iconButton = <IconButton iconClassName="fa fa-github white" />;
+            const imageStyle = {
+                width: '100%'
+            }
             return (
                 <GridTile
+                    onTouchTap={this.handleCard}
+                    key={index}
                     title={project.title}
                     actionIcon={iconButton}
                     actionPosition="right"
@@ -54,7 +63,8 @@ export default class ProjectComponent extends React.Component {
                     titleBackground="rgba(52, 152, 219,0.4)"
                     cols={project.featured ? 2 : 1}
                     rows={project.featured ? 2 : 1}>
-                    <img src={project.image}/>
+                    <img src={project.image}
+                         style={imageStyle} />
                 >
                 </GridTile>
             )
@@ -64,10 +74,10 @@ export default class ProjectComponent extends React.Component {
             <GridList
                 cols={this.state.cols}
                 cellHeight={200}
-                padding={4}
+                padding={8}
                 style={{width: '100%', height: '100%', overflowY: 'auto'}} >
 
-                {projects.map(project => generateTile(project))}
+                {projects.map((project, index) => generateTile(project, index))}
             </GridList>
         )
     }
