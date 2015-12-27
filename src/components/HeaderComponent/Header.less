@@ -1,12 +1,41 @@
 @import "../../variables.less";
 
-.header h1 {
-    font-size: 5em; 
-    margin: 0;
-    font-weight: 500;
+.HorizontalCenter {
+  display: -webkit-flex;
+  display: flex;
 
-    @media @mobile { font-size: 3em; }
-    @media @tablet { font-size: 3em; }
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.VerticalCenter {
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.header {
+  .HorizontalCenter;
+  .VerticalCenter;
+}
+
+.nameHeader {
+  padding: 0 2em;
+}
+
+.header h1 {
+  font-size: 3.2em;
+  margin: 0;
+  line-height: 0.75;
+  font-weight: 500;
+
+  @media @mobile {
+    font-size: 2em;
+  }
+  @media @tablet {
+  }
 }
 
 

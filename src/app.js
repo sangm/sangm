@@ -1,8 +1,9 @@
 import React from 'react'
-import App from './components/AppComponent/AppComp.jsx'
+import ReactDOM from 'react-dom'
+import App from './components/AppComponent/AppComponent.jsx'
 import info from './information.json'
 
 import injectTapEventPlugin from "react-tap-event-plugin";
 injectTapEventPlugin();
 
-React.render(<App info={info} />, document.getElementById('contents'))
+ReactDOM.render(<App info={info} />, document.getElementById('contents'))
