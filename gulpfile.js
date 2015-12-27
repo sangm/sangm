@@ -7,7 +7,6 @@ var source = require('vinyl-source-stream');
 
 var browserify = require('browserify');
 var babelify = require('babelify');
-var reactify = require('reactify');
 var lessify = require('node-lessify');
 
 var less = require('gulp-less');
@@ -21,8 +20,9 @@ var LessPluginCleanCSS = require('less-plugin-clean-css'),
 
 gulp.task('build', function() {
     browserify('./src/app.js')
-        .transform(babelify)
-        .transform(reactify)
+        .transform(babelify, {
+            presets: ["react", "es2015", "stage-0"]
+        })
         .transform(lessify)
         .bundle()
           .on('error', function(err) {
