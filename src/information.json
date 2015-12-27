@@ -45,23 +45,16 @@
     {
       "title": "Account Management",
       "github": "https://github.com/sangm/AccountManagement",
-      "image": "https://google.com",
+      "image": "https://github.com/sangm/AccountManagement/raw/master/assignment-related-resources/images/accountList.png",
       "youtube": "https://youtube.com",
       "live": ""
     },
     {
-      "title": "Google Search with TF-IDF Implementation",
-      "github": "https://github.com/sangm/search-rerank",
-      "live": "http://dm.sangm.io"
-    },
-    {
-      "title": "Tutoring Check-in",
-      "live": "http://node.sangm.net"
-    },
-    {
-      "title": "TwitterSearch",
-      "github": "https://github.com/sangm/twitter-search.git",
-      "youtube": "https://www.youtube.com/watch?v=DgvQhfjD2cY"
+      "title": "Account Management",
+      "github": "https://github.com/sangm/AccountManagement",
+      "image": "https://google.com",
+      "youtube": "https://youtube.com",
+      "live": ""
     }
   ],
   "github": "https://github.com/sangm",
