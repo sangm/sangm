@@ -12,6 +12,7 @@ var lessify = require('node-lessify');
 var less = require('gulp-less');
 var concatCss = require('gulp-concat-css');
 var uglify = require('gulp-uglify');
+var ghPages = require('gulp-gh-pages');
 
 var LessPluginCleanCSS = require('less-plugin-clean-css'),
     LessPluginAutoPrefix = require('less-plugin-autoprefix'),
@@ -65,6 +66,13 @@ gulp.task('assets', function() {
     gulp.src('assets/**/*')
         .pipe(gulp.dest('dist/assets'))
 })
+
+gulp.task('deploy', function () {
+  return gulp.src("./dist/**/*")
+    .pipe(ghPages({
+      branch: 'master'   
+    }))
+});
 
 gulp.task('default', ['build', 'less'])
 gulp.task('develop', ['server', 'watch'])
