@@ -1,3 +1,10 @@
+.center-div,
+.left-div {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  -webkit-align-items: center;
+}
+
 .SysPadding,
 .left-div {
   padding: 0;
@@ -10,31 +17,31 @@
 }
 
 .lightBlue {
-  color: #3498DB;
+  color: #3498DB!important;
 }
 
 .navy {
-  color: #2C3E50;
+  color: #2C3E50!important;
 }
 
 .red {
-  color: #E74C3C;
+  color: #E74C3C!important;
 }
 
 .white {
-  color: #ECF0F1;
+  color: #ECF0F1!important;
 }
 
 .blue {
-  color: #2980B9;
+  color: #2980B9!important;
 }
 
 .gray {
-  color: #777;
+  color: #777!important;
 }
 
 .black {
-  color: #000;
+  color: #000!important;
 }
 
 .SysMargin {
@@ -47,11 +54,9 @@
   cursor: default;
 }
 
+.center-div,
 .left-div {
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
   -webkit-justify-content: center;
@@ -90,21 +95,52 @@
 .modal-primary {
   margin: 0 auto;
 }
+.HorizontalCenter,
+.VerticalCenter {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+}
+
+.HorizontalCenter {
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.VerticalCenter {
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.header {
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.nameHeader {
+  padding: 0 2em;
+}
+
 .header h1 {
-  font-size: 5em;
+  font-size: 3.2em;
   margin: 0;
+  line-height: .75;
   font-weight: 500;
 }
 
 @media all and (min-width:320px) and (max-width:529px) {
   .header h1 {
-    font-size: 3em;
-  }
-}
-
-@media all and (min-width:530px) and (max-width:767px) {
-  .header h1 {
-    font-size: 3em;
+    font-size: 2em;
   }
 }
 .job h1 {
