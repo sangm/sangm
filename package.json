@@ -15,7 +15,7 @@
     "server": "gulp server",
     "dev": "gulp develop",
     "deploy": "gulp deploy",
-    "prod": "gulp prod && babel-node src/generate-static.js"
+    "prod": "NODE_ENV=production gulp prod && babel-node src/generate-static.js"
   },
   "author": "",
   "license": "ISC",

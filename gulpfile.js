@@ -67,6 +67,11 @@ gulp.task('assets', function() {
         .pipe(gulp.dest('dist/assets'))
 })
 
+gulp.task('cname', function() {
+    gulp.src('CNAME')
+        .pipe(gulp.dest('dist'))
+})
+
 gulp.task('deploy', function () {
   return gulp.src("./dist/**/*")
     .pipe(ghPages({
@@ -76,5 +81,5 @@ gulp.task('deploy', function () {
 
 gulp.task('default', ['build', 'less'])
 gulp.task('develop', ['server', 'watch'])
-gulp.task('prod', ['build', 'less', 'assets']);
+gulp.task('prod', ['build', 'less', 'assets', 'cname']);
 
