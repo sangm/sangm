@@ -7,11 +7,7 @@ export default class ProjectComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            cols: 2
-        };
-
-        if (typeof window !== 'undefined') {
-            this.updateDimensions();
+            cols: 2,
         }
     }
 
@@ -29,8 +25,8 @@ export default class ProjectComponent extends React.Component {
                 this.setState({cols: 1})
             } else if (width > 530 && width < 1024 && this.state.cols !== 2) {
                 this.setState({cols: 2})
-            } else if (width >= 1024 && this.state.cols !== 4) {
-                this.setState({cols: 4})
+            } else if (width >= 1024 && this.state.cols !== 3) {
+                this.setState({cols: 3})
             }
         }
     }
@@ -51,16 +47,21 @@ export default class ProjectComponent extends React.Component {
         let {projects} = this.props;
 
         return (
-            <GridList
-                cols={this.state.cols}
-                cellHeight={200}
-                padding={8}
-                style={{width: '100%', height: '100%', overflowY: 'auto'}}>
+            /*
+             <ReactCSSTransitionGroup transitionName="example">
+             <div className="box fade-in one"></div>
+             </ReactCSSTransitionGroup>
+             */
+            <GridList cols={this.state.cols}
+                      className="fade-in"
+                      cellHeight={200}
+                      padding={8}
+                      style={{width: '100%', height: '100%', overflowY: 'auto'}}>
 
                 {projects.map((project, index) => <ProjectTile key={index}
                                                                project={project}
                                                                cols={project.featured ? 2 : 1}
-                                                               rows={project.featured ? 2: 1}/>) }
+                                                               rows={project.featured ? 2 : 1}/>) }
             </GridList>
         )
     }

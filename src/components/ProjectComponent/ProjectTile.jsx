@@ -45,7 +45,8 @@ export default class ProjectTile extends React.Component {
             />;
 
         const cardButtons = [
-            <FlatButton linkButton={true}
+            <FlatButton key={1}
+                        linkButton={true}
                         href={youtube}
                         disabled={!youtube}
                         style={buttonStyle}
@@ -56,7 +57,8 @@ export default class ProjectTile extends React.Component {
                                            Object.assign(disabledStyle, iconStyle)}/>
             </FlatButton>,
 
-            <FlatButton linkButton={true}
+            <FlatButton key={2}
+                        linkButton={true}
                         href={demo}
                         disabled={!demo}
                         style={buttonStyle}
@@ -67,7 +69,8 @@ export default class ProjectTile extends React.Component {
                                            Object.assign(disabledStyle, iconStyle)}/>
             </FlatButton>,
 
-            <FlatButton linkButton={true}
+            <FlatButton key={3}
+                        linkButton={true}
                         href={github}
                         style={buttonStyle}
                         disabled={!github}
@@ -92,6 +95,7 @@ export default class ProjectTile extends React.Component {
                             <img src={image}/>
                         </CardMedia>
                         <CardActions style={cardContentStyle}>
+                            {cardButtons}
                         </CardActions>
                     </Card>
                 </Dialog>
