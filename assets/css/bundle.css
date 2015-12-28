@@ -95,6 +95,49 @@
 .modal-primary {
   margin: 0 auto;
 }
+.job h1 {
+  font-size: 1.4em;
+  margin: 0;
+  padding: 0;
+}
+
+.job .second-header {
+  font-size: 80%;
+  margin: 0;
+  padding-left: 1em;
+  cursor: pointer;
+}
+
+.job-modal h1,
+.job-modal h2 {
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+}
+
+.job .mui-flat-button {
+  background-color: #2C3E50;
+}
+
+.job .mui-flat-button:hover {
+  background-color: #ECF0F1;
+}
+
+.job-modal {
+  text-align: center;
+}
+
+.job-modal h1 {
+  font-size: 1.5em;
+}
+
+.job-modal h2 {
+  font-size: 1.1em;
+}
+
+.job-modal li {
+  padding: .5em;
+}
 .HorizontalCenter,
 .VerticalCenter {
   display: -webkit-flex;
@@ -142,49 +185,6 @@
   .header h1 {
     font-size: 2em;
   }
-}
-.job h1 {
-  font-size: 1.4em;
-  margin: 0;
-  padding: 0;
-}
-
-.job .second-header {
-  font-size: 80%;
-  margin: 0;
-  padding-left: 1em;
-  cursor: pointer;
-}
-
-.job-modal h1,
-.job-modal h2 {
-  font-weight: 300;
-  padding: 0;
-  margin: 0;
-}
-
-.job .mui-flat-button {
-  background-color: #2C3E50;
-}
-
-.job .mui-flat-button:hover {
-  background-color: #ECF0F1;
-}
-
-.job-modal {
-  text-align: center;
-}
-
-.job-modal h1 {
-  font-size: 1.5em;
-}
-
-.job-modal h2 {
-  font-size: 1.1em;
-}
-
-.job-modal li {
-  padding: .5em;
 }
 .project-list li {
   padding: 1em;

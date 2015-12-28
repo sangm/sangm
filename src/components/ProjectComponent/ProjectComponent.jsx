@@ -47,11 +47,6 @@ export default class ProjectComponent extends React.Component {
         let {projects} = this.props;
 
         return (
-            /*
-             <ReactCSSTransitionGroup transitionName="example">
-             <div className="box fade-in one"></div>
-             </ReactCSSTransitionGroup>
-             */
             <GridList cols={this.state.cols}
                       className="fade-in"
                       cellHeight={200}

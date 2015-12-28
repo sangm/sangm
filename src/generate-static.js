@@ -8,7 +8,7 @@ let info = JSON.parse(fs.readFileSync(__dirname + '/information.json', 'utf-8'))
 let fileData = fs.readFileSync(__dirname + '/templates/index.handlebars').toString();
 let layoutTemplate = Handlebars.compile(fileData);
 
-let renderedComp = ReactDOMServer.renderToString(<App info={info} />);
+let renderedComp = ReactDOMServer.renderToStaticMarkup(<App info={info} />);
 
 let renderedLayout = layoutTemplate({
     contents: renderedComp
