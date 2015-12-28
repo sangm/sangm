@@ -92,7 +92,6 @@ export default class ProjectTile extends React.Component {
                             <img src={image}/>
                         </CardMedia>
                         <CardActions style={cardContentStyle}>
-                            {cardButtons}
                         </CardActions>
                     </Card>
                 </Dialog>

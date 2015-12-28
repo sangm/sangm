@@ -7,7 +7,11 @@ export default class ProjectComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            cols: 2,
+            cols: 2
+        };
+
+        if (typeof window !== 'undefined') {
+            this.updateDimensions();
         }
     }
 
