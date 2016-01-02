@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import EmailComponent from '../EmailComponent/EmailComponent.jsx'
 import { IconButton } from 'material-ui'
 
 /* Header.less contains class names used in this file */
@@ -18,9 +19,9 @@ class HeaderComponent extends React.Component {
     render() {
         let {firstName, lastName, firstNameColor, lastNameColor, github, linkedin, email } = this.props;
 
-        const githubClass = `fa fa-github ${firstNameColor}`;
-        const linkedinClass = `fa fa-linkedin ${firstNameColor}`;
-        const emailClass = `fa fa-inbox ${firstNameColor}`;
+        const githubClass = github ? `fa fa-github ${firstNameColor}` : 'fa fa-github';
+        const linkedinClass = linkedin ? `fa fa-linkedin ${firstNameColor}` : 'fa fa-linkedin';
+        const emailClass = email ? `fa fa-inbox ${firstNameColor}` : 'fa fa-inbox';
 
         return (
             <div className="header">
@@ -33,16 +34,18 @@ class HeaderComponent extends React.Component {
                         <li className="icon">
                             <IconButton iconClassName={ githubClass }
                                         href={github}
+                                        disabled={!github}
                                         linkButton={true}/>
                         </li>
                         <li>
                             <IconButton iconClassName={ linkedinClass }
                                         href={linkedin}
+                                        disabled={!linkedin}
                                         linkButton={true}/>
                         </li>
                         <li className="icon">
-                            <IconButton iconClassName={ emailClass }
-                                        linkButton={true}/>
+                            <EmailComponent icon={emailClass}
+                                            email={email}/>
                         </li>
                     </ul>
                 </div>

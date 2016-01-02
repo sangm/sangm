@@ -12,7 +12,7 @@ let renderedComp = ReactDOMServer.renderToStaticMarkup(<App info={info} />);
 
 let renderedLayout = layoutTemplate({
     contents: renderedComp
-})
+});
 
 fs.writeFile(__dirname + '/../dist/index.html', renderedLayout, function (err) {
       if (err) {

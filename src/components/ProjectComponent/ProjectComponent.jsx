@@ -1,5 +1,5 @@
 import React from 'react'
-import ProjectTile from './ProjectTile.jsx'
+import ProjectTile from './ProjectTileComponent.jsx'
 import { GridList, GridTile, IconButton, FlatButton, Dialog, RaisedButton } from 'material-ui'
 
 export default class ProjectComponent extends React.Component {
