@@ -29,26 +29,24 @@ class HeaderComponent extends React.Component {
                     <h1 className={firstNameColor}>{firstName}</h1>
                     <h1 className={lastNameColor}>{lastName}</h1>
                 </div>
-                <div className="iconHeader">
-                    <ul className="list-unstyled list-inline">
-                        <li className="icon">
-                            <IconButton iconClassName={ githubClass }
-                                        href={github}
-                                        disabled={!github}
-                                        linkButton={true}/>
-                        </li>
-                        <li>
-                            <IconButton iconClassName={ linkedinClass }
-                                        href={linkedin}
-                                        disabled={!linkedin}
-                                        linkButton={true}/>
-                        </li>
-                        <li className="icon">
-                            <EmailComponent icon={emailClass}
-                                            email={email}/>
-                        </li>
-                    </ul>
-                </div>
+                <ul className="icon-header list-unstyled list-inline">
+                    <li className="icon">
+                        <IconButton iconClassName={ githubClass }
+                                    href={github}
+                                    disabled={!github}
+                                    linkButton={true}/>
+                    </li>
+                    <li>
+                        <IconButton iconClassName={ linkedinClass }
+                                    href={linkedin}
+                                    disabled={!linkedin}
+                                    linkButton={true}/>
+                    </li>
+                    <li className="icon">
+                        <EmailComponent icon={emailClass}
+                                        email={email}/>
+                    </li>
+                </ul>
             </div>
         )
     }
